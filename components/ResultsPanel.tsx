@@ -35,7 +35,7 @@ export default function ResultsPanel({ result }: ResultsPanelProps) {
         </div>
 
         {/* Values */}
-        <div className="bg-white rounded-xl border border-success-500/30 p-4 space-y-2">
+        <div className="bg-white rounded-xl border border-success-100 p-4 space-y-2">
           <div className="flex justify-between items-center">
             <span className="text-sm text-muted">Goods value (FOB)</span>
             <CountUp value={result.fobValuePhp} className="font-mono font-semibold text-foreground tabular-nums" />
@@ -66,7 +66,7 @@ export default function ResultsPanel({ result }: ResultsPanelProps) {
 
         {/* Consolidation warning */}
         {result.consolidationToggle && (
-          <div className="rounded-lg bg-accent-100 border border-accent-400/40 px-4 py-3">
+          <div className="rounded-lg bg-accent-100 border border-accent-300 px-4 py-3">
             <p className="text-sm font-medium text-accent-600">
               ⚠ Consolidation rule note
             </p>
@@ -104,7 +104,7 @@ export default function ResultsPanel({ result }: ResultsPanelProps) {
           Estimated breakdown · {categoryLabel}
         </p>
         {dutyRateNote && (
-          <p className="text-xs text-navy-200/70 mt-0.5">{dutyRateNote}</p>
+          <p className="text-xs text-navy-200 mt-0.5 opacity-70">{dutyRateNote}</p>
         )}
       </div>
 

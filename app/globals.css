@@ -45,12 +45,15 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; /* Prevent font scaling on orientation change in iOS Safari */
 }
 
 body {
   background-color: var(--color-navy-50);
   color: var(--color-foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Focus ring consistent with accent */
@@ -58,6 +61,21 @@ body {
   outline: 2px solid var(--color-accent-500);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+/* Remove tap highlight on iOS Safari — we use focus-visible instead */
+a, button, [role="button"], input, select, label {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide number input spinners across all browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 /* Tabular numbers for all currency displays */

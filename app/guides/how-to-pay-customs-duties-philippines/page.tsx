@@ -131,8 +131,8 @@ export default function HowToPayPage() {
 
           <section>
             <h2 className="text-xl font-bold text-foreground mb-4">What you&apos;ll actually pay</h2>
-            <div className="rounded-xl border border-border bg-surface overflow-hidden">
-              <table className="w-full text-sm">
+            <div className="rounded-xl border border-border bg-surface overflow-hidden overflow-x-auto">
+              <table className="w-full text-sm min-w-[480px]">
                 <thead>
                   <tr className="bg-navy-50 border-b border-border">
                     <th className="text-left px-4 py-3 font-semibold text-foreground">Charge</th>

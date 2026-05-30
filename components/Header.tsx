@@ -1,6 +1,11 @@
+'use client';
+
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
+  { href: '/', label: 'Calculator' },
   { href: '/how-it-works', label: 'How It Works' },
   { href: '/temu-import-tax', label: 'Temu' },
   { href: '/shein-import-tax', label: 'Shein' },
@@ -11,6 +16,24 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  // Close menu on Escape
+  useEffect(() => {
+    if (!isOpen) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') setIsOpen(false);
+    }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [isOpen]);
+
   return (
     <header className="sticky top-0 z-50 bg-navy-950 border-b border-navy-700">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,7 +55,7 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1" aria-label="Main navigation">
-            {navLinks.map(({ href, label }) => (
+            {navLinks.slice(1).map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
@@ -43,17 +66,47 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Mobile nav toggle — purely cosmetic label for small screens */}
-          <div className="md:hidden">
-            <Link
-              href="/how-it-works"
-              className="text-sm text-navy-200 hover:text-white transition-colors"
-            >
-              Guide
-            </Link>
-          </div>
+          {/* Mobile hamburger button */}
+          <button
+            type="button"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden flex items-center justify-center w-9 h-9 rounded-md text-navy-200 hover:text-white hover:bg-navy-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+          >
+            {isOpen ? (
+              /* X icon */
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+              </svg>
+            ) : (
+              /* Hamburger icon */
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      {isOpen && (
+        <div id="mobile-menu" className="md:hidden bg-navy-900 border-t border-navy-800">
+          <nav className="max-w-6xl mx-auto px-4 py-3 flex flex-col" aria-label="Mobile navigation">
+            {navLinks.map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="px-3 py-2.5 text-sm text-navy-100 hover:text-white hover:bg-navy-800 rounded-md transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }
