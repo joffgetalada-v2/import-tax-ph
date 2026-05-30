@@ -1,65 +1,169 @@
-import Image from "next/image";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import ImportTaxCalculator from '@/components/ImportTaxCalculator';
+import { DE_MINIMIS_PHP } from '@/lib/rates';
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'Free Philippine Import Tax Calculator — Customs Duty & VAT Estimator',
+  description:
+    'Instantly estimate Philippine customs duties and VAT on your Temu, Shein, AliExpress, or Amazon orders. Free, client-side tool updated for the ₱10,000 de minimis threshold (CAO 02-2025).',
+  openGraph: {
+    title: 'Free Philippine Import Tax Calculator',
+    description: 'Know your PH customs duty and VAT before you buy. Updated for the ₱10,000 de minimis rule.',
+  },
+};
+
+const howItWorksSteps = [
+  {
+    n: '1',
+    title: 'Enter your order details',
+    body: 'Input the item price in any currency, add shipping and insurance if applicable, and choose a product category.',
+  },
+  {
+    n: '2',
+    title: 'We calculate CIF',
+    body: 'The tool converts to PHP and adds shipping + insurance to get the Cost, Insurance & Freight (CIF) value — the basis for Philippine customs duties.',
+  },
+  {
+    n: '3',
+    title: 'De minimis check',
+    body: `If CIF is ₱${DE_MINIMIS_PHP.toLocaleString()} or less, your shipment is tax-free under CAO 02-2025. Otherwise, duty and 12% VAT are computed.`,
+  },
+  {
+    n: '4',
+    title: 'See your estimate',
+    body: 'Get an itemized breakdown: duty, VAT, total taxes, and estimated landed cost — all in one clear view.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'What is the de minimis threshold in the Philippines?',
+    a: `As of CAO No. 02-2025 (effective May 7, 2025), shipments with a dutiable value at or below ₱${DE_MINIMIS_PHP.toLocaleString()} are exempt from customs duty and VAT. This is based on the FOB/FCA value of the goods.`,
+  },
+  {
+    q: 'Does this apply to Temu, Shein, and AliExpress orders?',
+    a: 'Yes — individual packages from any international platform are assessed against the same threshold. If your order value (converted to PHP, plus shipping and insurance) stays at or below ₱10,000, you generally won\'t pay customs taxes.',
+  },
+  {
+    q: 'What is the consolidation rule?',
+    a: 'Per CAO 02-2025, if multiple packages addressed to the same recipient arrive on the same day, the Bureau of Customs may consolidate them and treat them as one shipment — potentially pushing the total above ₱10,000.',
+  },
+  {
+    q: 'How accurate is this calculator?',
+    a: 'This tool provides representative estimates based on category duty rates. The actual duty depends on the specific HS/AHTN tariff classification of your item, which only the Bureau of Customs determines. Always verify with BOC for important purchases.',
+  },
+  {
+    q: 'What is CIF value?',
+    a: 'CIF stands for Cost + Insurance + Freight. It\'s the total value of the goods plus any shipping and insurance charges, converted to PHP. Philippine customs duties are computed on the CIF value.',
+  },
+  {
+    q: 'Are taxes included in my order total on Temu or Shein?',
+    a: 'Not always. While platforms may collect some fees, formal customs duty and VAT are assessed by the Bureau of Customs upon arrival in the Philippines — separate from what you paid the seller.',
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      {/* Hero section */}
+      <section className="bg-navy-950 text-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+          <div className="max-w-2xl mx-auto text-center mb-10 sm:mb-12">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight mb-4">
+              Philippine Import Tax{' '}
+              <span className="text-accent-400">Calculator</span>
+            </h1>
+            <p className="text-navy-100 text-base sm:text-lg leading-relaxed">
+              Know your customs duty and VAT before your Temu, Shein, AliExpress, or Amazon order
+              arrives. Free, instant, and updated for the ₱10,000 de minimis rule.
+            </p>
+          </div>
+
+          {/* Calculator */}
+          <div className="max-w-xl mx-auto">
+            <ImportTaxCalculator defaultCategory="general" />
+          </div>
+        </div>
+      </section>
+
+      {/* Shop-specific shortcuts */}
+      <section className="bg-surface border-b border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <p className="text-xs text-muted text-center mb-3 font-medium uppercase tracking-wider">
+            Tailored calculators
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {[
+              { href: '/temu-import-tax', label: 'Temu' },
+              { href: '/shein-import-tax', label: 'Shein' },
+              { href: '/aliexpress-import-tax', label: 'AliExpress' },
+              { href: '/balikbayan-box', label: 'Balikbayan Box' },
+            ].map(({ href, label }) => (
+              <Link
+                key={href}
+                href={href}
+                className="px-4 py-2 rounded-full border border-border text-sm text-foreground hover:bg-navy-50 hover:border-navy-200 transition-colors"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground">How it works</h2>
+          <p className="mt-2 text-muted text-base">
+            Four steps, seconds to compute.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {howItWorksSteps.map((step) => (
+            <div
+              key={step.n}
+              className="bg-surface rounded-xl border border-border p-5 hover:shadow-md transition-shadow"
+            >
+              <div className="w-9 h-9 rounded-full bg-navy-950 text-white text-sm font-bold flex items-center justify-center mb-3">
+                {step.n}
+              </div>
+              <h3 className="font-semibold text-foreground text-sm mb-1.5">{step.title}</h3>
+              <p className="text-sm text-muted leading-relaxed">{step.body}</p>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+        <div className="text-center mt-8">
+          <Link
+            href="/how-it-works"
+            className="inline-flex items-center gap-1.5 text-sm text-navy-600 hover:text-navy-800 font-medium transition-colors"
+          >
+            Full guide: how Philippine customs computes duties →
+          </Link>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-surface border-t border-border">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
+              Frequently asked questions
+            </h2>
+          </div>
+          <dl className="space-y-6">
+            {faqs.map((faq) => (
+              <div key={faq.q} className="border-b border-border pb-6 last:border-0">
+                <dt className="font-semibold text-foreground text-sm sm:text-base mb-2">
+                  {faq.q}
+                </dt>
+                <dd className="text-sm text-muted leading-relaxed">{faq.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+    </>
   );
 }

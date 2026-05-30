@@ -1,26 +1,66 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Navy scale — primary brand / trust color */
+  --color-navy-950: #0a0f1e;
+  --color-navy-900: #0d1526;
+  --color-navy-800: #162040;
+  --color-navy-700: #1e2d57;
+  --color-navy-600: #2a3f78;
+  --color-navy-500: #3a56a8;
+  --color-navy-200: #a8bcec;
+  --color-navy-100: #dce4f5;
+  --color-navy-50:  #f0f3fb;
+
+  /* Amber accent — CTA, highlights */
+  --color-accent-600: #c47010;
+  --color-accent-500: #e89020;
+  --color-accent-400: #f0a030;
+  --color-accent-300: #f5c06a;
+  --color-accent-100: #fef3dc;
+  --color-accent-50:  #fffbf0;
+
+  /* Success — tax-free / exempt state */
+  --color-success-700: #15803d;
+  --color-success-500: #16a34a;
+  --color-success-100: #dcfce7;
+  --color-success-50:  #f0fdf4;
+
+  /* Neutral surfaces */
+  --color-surface:    #ffffff;
+  --color-surface-2:  #f8fafc;
+  --color-border:     #e2e8f0;
+  --color-border-2:   #cbd5e1;
+  --color-muted:      #64748b;
+  --color-muted-2:    #94a3b8;
+
+  /* Semantic */
+  --color-background: var(--color-navy-50);
+  --color-foreground: #0f172a;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-navy-50);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Focus ring consistent with accent */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Tabular numbers for all currency displays */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
 }
