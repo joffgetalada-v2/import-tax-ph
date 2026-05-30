@@ -5,6 +5,8 @@ const navLinks = [
   { href: '/temu-import-tax', label: 'Temu' },
   { href: '/shein-import-tax', label: 'Shein' },
   { href: '/aliexpress-import-tax', label: 'AliExpress' },
+  { href: '/lazada-import-tax', label: 'Lazada' },
+  { href: '/shopee-import-tax', label: 'Shopee' },
   { href: '/balikbayan-box', label: 'Balikbayan Box' },
 ];
 
