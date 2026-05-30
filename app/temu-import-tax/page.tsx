@@ -1,19 +1,41 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Temu Import Tax Philippines — Customs Duty & VAT Calculator 2026',
+  title: 'Temu Import Tax Philippines – Will You Pay Customs?',
   description:
-    'How much customs duty and VAT will you pay on your Temu order in the Philippines? Use our free calculator — updated for the ₱10,000 de minimis threshold under CAO 02-2025.',
+    'Estimate customs duty and VAT on your Temu order to the Philippines. Free tool, updated for the ₱10,000 de minimis threshold.',
   openGraph: {
-    title: 'Temu Philippines Customs Duty Calculator',
-    description: 'Estimate PH import taxes on your Temu order before it arrives. Free & updated 2026.',
+    title: 'Temu Import Tax Philippines – Will You Pay Customs?',
+    description: 'Estimate customs duty and VAT on your Temu order to the Philippines. Free tool, updated for the ₱10,000 de minimis threshold.',
   },
 };
 
 export default function TemuPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Temu Philippines Import Tax Calculator',
+      url: 'https://importtax.ph/temu-import-tax',
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
+        { '@type': 'ListItem', position: 2, name: 'Temu Import Tax', item: 'https://importtax.ph/temu-import-tax' },
+      ],
+    },
+  ];
+
   return (
     <>
+      <JsonLd data={jsonLd} />
       <section className="bg-navy-950 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="max-w-2xl mx-auto text-center mb-10">

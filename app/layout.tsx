@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import JsonLd from '@/components/JsonLd';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -62,6 +63,21 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <JsonLd data={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'ImportTax.ph',
+            url: 'https://importtax.ph',
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'ImportTax.ph',
+            url: 'https://importtax.ph',
+            description: 'Free Philippine import tax and customs duty calculator.',
+          },
+        ]} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

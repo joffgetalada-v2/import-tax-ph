@@ -1,19 +1,41 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Shopee Import Tax Philippines — Will You Be Charged Customs Duty? (2026)',
+  title: 'Shopee Import Tax Philippines – Overseas Orders',
   description:
-    'Most Shopee orders from local sellers carry no import tax. Overseas / international Shopee orders may incur BOC customs duty and VAT. Free Philippines import tax calculator updated for CAO 02-2025.',
+    'Local Shopee orders carry no import tax; overseas orders may. Estimate Philippine customs duty and 12% VAT for free.',
   openGraph: {
-    title: 'Shopee Philippines Import Tax Calculator',
-    description: 'Local Shopee orders: no customs duty. International Shopee orders: estimate your import taxes. Free & updated 2026.',
+    title: 'Shopee Import Tax Philippines – Overseas Orders',
+    description: 'Local Shopee orders carry no import tax; overseas orders may. Estimate Philippine customs duty and 12% VAT for free.',
   },
 };
 
 export default function ShopeePage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Shopee Philippines Import Tax Calculator',
+      url: 'https://importtax.ph/shopee-import-tax',
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
+        { '@type': 'ListItem', position: 2, name: 'Shopee Import Tax', item: 'https://importtax.ph/shopee-import-tax' },
+      ],
+    },
+  ];
+
   return (
     <>
+      <JsonLd data={jsonLd} />
       <section className="bg-navy-950 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="max-w-2xl mx-auto text-center mb-10">

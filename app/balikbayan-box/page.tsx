@@ -1,19 +1,41 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Balikbayan Box Import Tax Philippines — Duty & VAT Calculator 2026',
+  title: 'Balikbayan Box Tax & Exemption Guide (Philippines)',
   description:
-    'Is your balikbayan box subject to customs duty? Use our free calculator to estimate Philippine import taxes on balikbayan shipments, updated for CAO 02-2025.',
+    'How balikbayan box duty/tax exemptions work for OFWs in the Philippines, plus what happens above the exemption limit.',
   openGraph: {
-    title: 'Balikbayan Box Philippines Import Tax Calculator',
-    description: 'Estimate duty and VAT on your balikbayan box shipment. Free PH customs calculator updated 2026.',
+    title: 'Balikbayan Box Tax & Exemption Guide (Philippines)',
+    description: 'How balikbayan box duty/tax exemptions work for OFWs in the Philippines, plus what happens above the exemption limit.',
   },
 };
 
 export default function BalikbayanPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Balikbayan Box Import Tax Calculator',
+      url: 'https://importtax.ph/balikbayan-box',
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
+        { '@type': 'ListItem', position: 2, name: 'Balikbayan Box', item: 'https://importtax.ph/balikbayan-box' },
+      ],
+    },
+  ];
+
   return (
     <>
+      <JsonLd data={jsonLd} />
       <section className="bg-navy-950 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="max-w-2xl mx-auto text-center mb-10">

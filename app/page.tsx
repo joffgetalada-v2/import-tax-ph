@@ -1,15 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
+import JsonLd from '@/components/JsonLd';
 import { DE_MINIMIS_PHP } from '@/lib/rates';
 
 export const metadata: Metadata = {
-  title: 'Free Philippine Import Tax Calculator — Customs Duty & VAT Estimator',
+  title: 'Philippine Import Tax Calculator – Customs Duty & VAT',
   description:
-    'Instantly estimate Philippine customs duties and VAT on your Temu, Shein, AliExpress, or Amazon orders. Free, client-side tool updated for the ₱10,000 de minimis threshold (CAO 02-2025).',
+    'Free calculator for Philippine customs duty and 12% VAT on international orders. Updated for the ₱10,000 de minimis rule (CAO 02-2025).',
   openGraph: {
-    title: 'Free Philippine Import Tax Calculator',
-    description: 'Know your PH customs duty and VAT before you buy. Updated for the ₱10,000 de minimis rule.',
+    title: 'Philippine Import Tax Calculator – Customs Duty & VAT',
+    description: 'Free calculator for Philippine customs duty and 12% VAT on international orders. Updated for the ₱10,000 de minimis rule (CAO 02-2025).',
   },
 };
 
@@ -63,9 +64,40 @@ const faqs = [
   },
 ];
 
+const webAppSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Philippine Import Tax Calculator',
+  url: 'https://importtax.ph',
+  applicationCategory: 'FinanceApplication',
+  operatingSystem: 'Web',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
+  ],
+};
+
 export default function HomePage() {
   return (
     <>
+      <JsonLd data={webAppSchema} />
+      <JsonLd data={faqSchema} />
+      <JsonLd data={breadcrumbSchema} />
       {/* Hero section */}
       <section className="bg-navy-950 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">

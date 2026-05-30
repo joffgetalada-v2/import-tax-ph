@@ -1,13 +1,38 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'How Philippine Import Tax is Computed — De Minimis, Duty & VAT Guide',
+  title: 'How PH Customs Duty & VAT Are Computed',
   description:
-    'Learn how the Philippine Bureau of Customs computes import duties and VAT, what the ₱10,000 de minimis threshold means, and how CAO No. 02-2025 affects your online orders.',
+    'A plain-English guide to how the Bureau of Customs computes duty and 12% VAT, the ₱10,000 de minimis, and the consolidation rule.',
+};
+
+const howToSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How to estimate Philippine import tax',
+  step: [
+    { '@type': 'HowToStep', name: 'Enter order details', text: 'Input item price, currency, shipping, insurance, and product category.' },
+    { '@type': 'HowToStep', name: 'Check the de minimis threshold', text: 'If the FOB goods value is ₱10,000 or below, the shipment is exempt from duty and VAT.' },
+    { '@type': 'HowToStep', name: 'Compute duty and VAT', text: 'If taxable, customs duty is applied to the CIF value, then 12% VAT is applied to CIF + duty.' },
+    { '@type': 'HowToStep', name: 'See your estimate', text: 'Review the itemized breakdown showing duty, VAT, total taxes, and estimated landed cost.' },
+  ],
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
+    { '@type': 'ListItem', position: 2, name: 'How It Works', item: 'https://importtax.ph/how-it-works' },
+  ],
 };
 
 export default function HowItWorksPage() {
   return (
+    <>
+      <JsonLd data={howToSchema} />
+      <JsonLd data={breadcrumbSchema} />
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
       {/* Title */}
       <div className="mb-10">
@@ -204,5 +229,6 @@ export default function HowItWorksPage() {
         </section>
       </div>
     </div>
+    </>
   );
 }

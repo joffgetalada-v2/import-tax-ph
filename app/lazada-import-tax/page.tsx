@@ -1,19 +1,41 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Lazada Import Tax Philippines — Do You Pay Customs Duty on LazGlobal Orders? (2026)',
+  title: 'Lazada Import Tax Philippines – Overseas Orders',
   description:
-    'Most Lazada orders from local sellers have no import tax. Cross-border LazGlobal orders may be assessed customs duty and VAT. Use our free Philippines import tax calculator — updated for CAO 02-2025.',
+    "Local Lazada orders aren't taxed; cross-border (LazGlobal) orders may be. Estimate customs duty and 12% VAT for free.",
   openGraph: {
-    title: 'Lazada Philippines Import Tax Calculator',
-    description: 'Local Lazada orders: no customs duty. LazGlobal cross-border orders: check your estimate here. Free & updated 2026.',
+    title: 'Lazada Import Tax Philippines – Overseas Orders',
+    description: "Local Lazada orders aren't taxed; cross-border (LazGlobal) orders may be. Estimate customs duty and 12% VAT for free.",
   },
 };
 
 export default function LazadaPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Lazada Philippines Import Tax Calculator',
+      url: 'https://importtax.ph/lazada-import-tax',
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
+        { '@type': 'ListItem', position: 2, name: 'Lazada Import Tax', item: 'https://importtax.ph/lazada-import-tax' },
+      ],
+    },
+  ];
+
   return (
     <>
+      <JsonLd data={jsonLd} />
       <section className="bg-navy-950 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="max-w-2xl mx-auto text-center mb-10">

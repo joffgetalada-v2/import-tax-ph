@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — ImportTax.ph',
+  title: 'Privacy Policy | ImportTax.ph',
   description:
-    'ImportTax.ph privacy policy. Learn how we handle (or rather, do not collect) your personal data.',
+    'How ImportTax.ph handles data: the calculator runs entirely in your browser and collects no personal information.',
 };
 
 export default function PrivacyPage() {

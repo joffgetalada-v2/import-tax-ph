@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About — ImportTax.ph',
+  title: 'About ImportTax.ph – Free PH Customs Calculator',
   description:
-    'ImportTax.ph is a free Philippine customs duty and VAT calculator for online shoppers. Learn about the tool and how it works.',
+    'Why we built a free, transparent Philippine import tax calculator and how we keep our duty rates current.',
 };
 
 export default function AboutPage() {

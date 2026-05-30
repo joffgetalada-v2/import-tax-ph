@@ -1,19 +1,41 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Shein Import Tax Philippines — Customs Duty & VAT Calculator 2026',
+  title: 'Shein Import Tax Philippines – Duty & VAT Calculator',
   description:
-    'Estimate customs duty and VAT on your Shein order in the Philippines. Free calculator updated for the ₱10,000 de minimis rule under CAO 02-2025.',
+    'Find out if your Shein order is taxed in the Philippines. Free duty + 12% VAT estimator, updated for CAO 02-2025.',
   openGraph: {
-    title: 'Shein Philippines Customs Duty Calculator',
-    description: 'Know your PH import taxes on Shein orders before they arrive. Free & updated 2026.',
+    title: 'Shein Import Tax Philippines – Duty & VAT Calculator',
+    description: 'Find out if your Shein order is taxed in the Philippines. Free duty + 12% VAT estimator, updated for CAO 02-2025.',
   },
 };
 
 export default function SheinPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Shein Philippines Import Tax Calculator',
+      url: 'https://importtax.ph/shein-import-tax',
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
+        { '@type': 'ListItem', position: 2, name: 'Shein Import Tax', item: 'https://importtax.ph/shein-import-tax' },
+      ],
+    },
+  ];
+
   return (
     <>
+      <JsonLd data={jsonLd} />
       <section className="bg-navy-950 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="max-w-2xl mx-auto text-center mb-10">

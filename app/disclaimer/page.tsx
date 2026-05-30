@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Disclaimer — ImportTax.ph',
+  title: 'Disclaimer | ImportTax.ph',
   description:
-    'ImportTax.ph provides estimates for guidance only — not an official Bureau of Customs assessment or legal/tax advice.',
+    'ImportTax.ph provides estimates for guidance only — not official Bureau of Customs assessments or legal/tax advice.',
 };
 
 export default function DisclaimerPage() {

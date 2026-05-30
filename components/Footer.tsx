@@ -13,7 +13,9 @@ const toolLinks = [
 
 const infoLinks = [
   { href: '/how-it-works', label: 'How It Works' },
+  { href: '/rates-sources', label: 'Rates & Sources' },
   { href: '/about', label: 'About' },
+  { href: '/terms', label: 'Terms of Use' },
   { href: '/disclaimer', label: 'Disclaimer' },
   { href: '/privacy', label: 'Privacy Policy' },
 ];

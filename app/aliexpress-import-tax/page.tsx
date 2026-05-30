@@ -1,19 +1,41 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'AliExpress Import Tax Philippines — Customs Duty & VAT Calculator 2026',
+  title: 'AliExpress Import Tax Philippines – Customs Calculator',
   description:
-    'Calculate customs duty and VAT on your AliExpress order arriving in the Philippines. Free tool updated for the ₱10,000 de minimis threshold and CAO 02-2025.',
+    'Estimate PH customs duty and VAT on AliExpress orders before they arrive. Free and updated for the ₱10,000 de minimis rule.',
   openGraph: {
-    title: 'AliExpress Philippines Customs Duty Calculator',
-    description: 'Estimate import taxes on your AliExpress parcels in the Philippines. Free & updated 2026.',
+    title: 'AliExpress Import Tax Philippines – Customs Calculator',
+    description: 'Estimate PH customs duty and VAT on AliExpress orders before they arrive. Free and updated for the ₱10,000 de minimis rule.',
   },
 };
 
 export default function AliExpressPage() {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'AliExpress Philippines Import Tax Calculator',
+      url: 'https://importtax.ph/aliexpress-import-tax',
+      applicationCategory: 'FinanceApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
+        { '@type': 'ListItem', position: 2, name: 'AliExpress Import Tax', item: 'https://importtax.ph/aliexpress-import-tax' },
+      ],
+    },
+  ];
+
   return (
     <>
+      <JsonLd data={jsonLd} />
       <section className="bg-navy-950 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="max-w-2xl mx-auto text-center mb-10">
