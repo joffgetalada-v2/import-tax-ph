@@ -46,42 +46,42 @@ export const CATEGORY_CONFIG: Record<ProductCategory, CategoryConfig> = {
   electronics: {
     label: 'Electronics & Gadgets',
     dutyRate: 0.10,
-    dutyRateNote: 'Varies widely; many consumer electronics qualify for 0% — verify your HS code',
+    dutyRateNote: 'Estimate — varies; many electronics are duty-free (0%). Verify in the Tariff Commission Tariff Finder.',
   },
   clothing: {
     label: 'Clothing & Apparel',
     dutyRate: 0.15,
-    dutyRateNote: 'Most textile apparel is 15%',
+    dutyRateNote: 'Estimate — most textile apparel is 15%. Verify in the Tariff Commission Tariff Finder.',
   },
   footwear: {
     label: 'Shoes & Footwear',
     dutyRate: 0.15,
-    dutyRateNote: 'Most footwear is 15%',
+    dutyRateNote: 'Estimate — most footwear is 15%. Verify in the Tariff Commission Tariff Finder.',
   },
   'bags-accessories': {
     label: 'Bags & Accessories',
     dutyRate: 0.15,
-    dutyRateNote: 'Leather goods and accessories; rate may vary by material',
+    dutyRateNote: 'Estimate — rate may vary by material. Verify in the Tariff Commission Tariff Finder.',
   },
   toys: {
     label: 'Toys & Games',
     dutyRate: 0.10,
-    dutyRateNote: 'Representative rate; verify with tariff finder',
+    dutyRateNote: 'Estimate — verify in the Tariff Commission Tariff Finder.',
   },
   cosmetics: {
     label: 'Cosmetics & Skincare',
     dutyRate: 0.10,
-    dutyRateNote: 'Representative rate; verify with tariff finder',
+    dutyRateNote: 'Estimate — verify in the Tariff Commission Tariff Finder.',
   },
   books: {
     label: 'Books & Publications',
     dutyRate: 0.00,
-    dutyRateNote: 'Generally duty-free under CMTA',
+    dutyRateNote: 'Generally duty-free under CMTA. Verify in the Tariff Commission Tariff Finder.',
   },
   general: {
     label: 'Other / General Goods',
     dutyRate: 0.10,
-    dutyRateNote: 'Default estimate; actual rate depends on HS/AHTN classification',
+    dutyRateNote: 'Estimate — actual rate depends on HS/AHTN classification. Verify in the Tariff Commission Tariff Finder.',
   },
 };
 

@@ -42,8 +42,8 @@ const faqs = [
     a: `As of CAO No. 02-2025 (effective May 7, 2025), shipments with a dutiable value at or below ₱${DE_MINIMIS_PHP.toLocaleString()} are exempt from customs duty and VAT. This is based on the FOB/FCA value of the goods.`,
   },
   {
-    q: 'Does this apply to Temu, Shein, and AliExpress orders?',
-    a: 'Yes — individual packages from any international platform are assessed against the same threshold. If your order value (converted to PHP, plus shipping and insurance) stays at or below ₱10,000, you generally won\'t pay customs taxes.',
+    q: 'Does this apply to Temu, Shein, AliExpress, Lazada, and Shopee orders?',
+    a: 'Yes — individual cross-border packages from any international platform are assessed against the same threshold. The ₱10,000 threshold is checked against the goods\' FOB value (the item price converted to PHP, before adding shipping and insurance). If the FOB value is ₱10,000 or below, no customs duty or VAT is charged.',
   },
   {
     q: 'What is the consolidation rule?',
@@ -54,8 +54,8 @@ const faqs = [
     a: 'This tool provides representative estimates based on category duty rates. The actual duty depends on the specific HS/AHTN tariff classification of your item, which only the Bureau of Customs determines. Always verify with BOC for important purchases.',
   },
   {
-    q: 'What is CIF value?',
-    a: 'CIF stands for Cost + Insurance + Freight. It\'s the total value of the goods plus any shipping and insurance charges, converted to PHP. Philippine customs duties are computed on the CIF value.',
+    q: 'What is the difference between FOB and CIF?',
+    a: 'FOB (Free On Board) is the price of the goods alone. CIF (Cost + Insurance + Freight) adds shipping and insurance on top. The ₱10,000 de minimis threshold is checked against the FOB value. If taxable, duties and VAT are then computed on the full CIF value.',
   },
   {
     q: 'Are taxes included in my order total on Temu or Shein?',
@@ -98,6 +98,8 @@ export default function HomePage() {
               { href: '/temu-import-tax', label: 'Temu' },
               { href: '/shein-import-tax', label: 'Shein' },
               { href: '/aliexpress-import-tax', label: 'AliExpress' },
+              { href: '/lazada-import-tax', label: 'Lazada' },
+              { href: '/shopee-import-tax', label: 'Shopee' },
               { href: '/balikbayan-box', label: 'Balikbayan Box' },
             ].map(({ href, label }) => (
               <Link

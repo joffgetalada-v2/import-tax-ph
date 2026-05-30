@@ -6,6 +6,8 @@ const toolLinks = [
   { href: '/temu-import-tax', label: 'Temu Import Tax' },
   { href: '/shein-import-tax', label: 'Shein Import Tax' },
   { href: '/aliexpress-import-tax', label: 'AliExpress Import Tax' },
+  { href: '/lazada-import-tax', label: 'Lazada Import Tax' },
+  { href: '/shopee-import-tax', label: 'Shopee Import Tax' },
   { href: '/balikbayan-box', label: 'Balikbayan Box' },
 ];
 
@@ -105,7 +107,12 @@ export default function Footer() {
             </a>
             .
           </p>
-          <p className="text-xs text-muted">
+          <p className="text-xs text-muted mt-2">
+            Temu, Shein, AliExpress, Lazada, Shopee, and other marketplace names are trademarks of
+            their respective owners. ImportTax.ph is independent and not affiliated with, endorsed
+            by, or sponsored by any of them.
+          </p>
+          <p className="text-xs text-muted mt-2">
             © {new Date().getFullYear()} ImportTax.ph — Not affiliated with the Bureau of Customs
             or any government agency.
           </p>

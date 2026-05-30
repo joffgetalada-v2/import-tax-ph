@@ -38,6 +38,8 @@ export interface CalculatorInput {
 // ─── Output ───────────────────────────────────────────────────────────────────
 
 export interface TaxBreakdown {
+  /** FOB value in PHP (goods/item value only, no shipping or insurance). */
+  fobValuePhp: number;
   /** Total CIF value in PHP (item + shipping + insurance). */
   cifValuePhp: number;
   /** The duty rate applied (e.g. 0.15 for 15%). */
@@ -56,6 +58,9 @@ export interface TaxBreakdown {
 
 export interface ExemptResult {
   status: 'exempt';
+  /** FOB value in PHP — the value checked against the de minimis threshold. */
+  fobValuePhp: number;
+  /** CIF value in PHP — includes shipping and insurance if provided. */
   cifValuePhp: number;
   consolidationToggle: boolean;
 }
@@ -78,9 +83,11 @@ export type CalculationResult = ExemptResult | TaxableResult;
  *
  * Logic:
  * 1. Convert item value to PHP using static exchange rate (or user override).
- * 2. CIF = itemValuePhp + shippingCostPhp + insuranceCostPhp.
- * 3. If CIF ≤ DE_MINIMIS_PHP (₱10,000), shipment is exempt — return ExemptResult.
- * 4. Otherwise:
+ * 2. FOB = itemValuePhp (goods value only — the basis for de minimis check).
+ * 3. CIF = itemValuePhp + shippingCostPhp + insuranceCostPhp.
+ * 4. De minimis check: if FOB ≤ DE_MINIMIS_PHP (₱10,000), shipment is exempt.
+ *    Note: the threshold is checked against FOB/goods value, not CIF.
+ * 5. If taxable (FOB > ₱10,000), compute duty and VAT on the full CIF value:
  *    duty     = dutyRate × CIF
  *    vatBase  = CIF + duty
  *    vat      = VAT_RATE × vatBase
@@ -100,18 +107,25 @@ export function calculateImportTax(input: CalculatorInput): CalculationResult {
 
   const fxRate = customFxRate ?? EXCHANGE_RATES[currency];
   const itemValuePhp = itemValue * fxRate;
+
+  // FOB = goods value only (no shipping/insurance). This is what CAO 02-2025
+  // checks against the ₱10,000 de minimis threshold.
+  const fobValuePhp = itemValuePhp;
+
+  // CIF = goods + shipping + insurance. Used as the duty/VAT base if taxable.
   const cifValuePhp = itemValuePhp + shippingCostPhp + insuranceCostPhp;
 
-  // Step 3: de minimis check
-  if (cifValuePhp <= DE_MINIMIS_PHP) {
+  // Step 4: de minimis check — based on FOB, not CIF
+  if (fobValuePhp <= DE_MINIMIS_PHP) {
     return {
       status: 'exempt',
+      fobValuePhp,
       cifValuePhp,
       consolidationToggle,
     };
   }
 
-  // Step 4: taxable computation
+  // Step 5: taxable computation — duty and VAT applied to CIF
   const { dutyRate, label, dutyRateNote } = CATEGORY_CONFIG[category];
 
   const dutyAmount = dutyRate * cifValuePhp;
@@ -123,6 +137,7 @@ export function calculateImportTax(input: CalculatorInput): CalculationResult {
   return {
     status: 'taxable',
     breakdown: {
+      fobValuePhp,
       cifValuePhp,
       dutyRateUsed: dutyRate,
       dutyAmount,

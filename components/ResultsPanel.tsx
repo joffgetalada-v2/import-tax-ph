@@ -34,13 +34,19 @@ export default function ResultsPanel({ result }: ResultsPanelProps) {
           </div>
         </div>
 
-        {/* CIF value */}
-        <div className="bg-white rounded-xl border border-success-500/30 p-4">
+        {/* Values */}
+        <div className="bg-white rounded-xl border border-success-500/30 p-4 space-y-2">
           <div className="flex justify-between items-center">
-            <span className="text-sm text-muted">Dutiable (CIF) value</span>
-            <CountUp value={result.cifValuePhp} className="font-mono font-semibold text-foreground tabular-nums" />
+            <span className="text-sm text-muted">Goods value (FOB)</span>
+            <CountUp value={result.fobValuePhp} className="font-mono font-semibold text-foreground tabular-nums" />
           </div>
-          <div className="flex justify-between items-center mt-2 pt-2 border-t border-border">
+          {result.cifValuePhp !== result.fobValuePhp && (
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-muted">CIF value (incl. shipping/insurance)</span>
+              <CountUp value={result.cifValuePhp} className="font-mono text-sm text-foreground tabular-nums" />
+            </div>
+          )}
+          <div className="flex justify-between items-center pt-2 border-t border-border">
             <span className="text-sm font-medium text-success-700">Total duties &amp; taxes</span>
             <span className="font-mono font-bold text-success-700 tabular-nums">₱0.00</span>
           </div>
@@ -48,9 +54,14 @@ export default function ResultsPanel({ result }: ResultsPanelProps) {
 
         {/* Explanation */}
         <p className="text-sm text-success-700">
-          This shipment is exempt from customs duty and VAT because the total CIF value (
-          {formatPhp(result.cifValuePhp)}) is at or below the ₱{DE_MINIMIS_PHP.toLocaleString()}{' '}
+          This shipment is exempt from customs duty and VAT because the goods value (FOB{' '}
+          {formatPhp(result.fobValuePhp)}) is at or below the ₱{DE_MINIMIS_PHP.toLocaleString()}{' '}
           de minimis threshold under {RATES_REGULATION_REF}.
+        </p>
+
+        {/* Courier fee note */}
+        <p className="text-sm text-success-700">
+          Duty and VAT are ₱0, but your courier may still charge a processing or handling fee.
         </p>
 
         {/* Consolidation warning */}

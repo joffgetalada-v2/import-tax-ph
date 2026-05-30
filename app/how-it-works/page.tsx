@@ -54,19 +54,28 @@ export default function HowItWorksPage() {
             Under the <strong className="text-foreground">Customs Modernization and Tariff Act
             (CMTA)</strong> and{' '}
             <strong className="text-foreground">CAO No. 02-2025</strong> (effective May 7, 2025),
-            shipments with a dutiable value at or below{' '}
+            shipments with a goods value at or below{' '}
             <strong className="text-foreground">₱10,000</strong> are{' '}
             <strong className="text-foreground">fully exempt</strong> from customs duty and VAT.
           </p>
           <p className="mt-3">
             This is called the <em>de minimis</em> threshold. It means most small online purchases
-            from Temu, Shein, AliExpress, and similar platforms arrive in the Philippines without
-            any import taxes.
+            from Temu, Shein, AliExpress, Lazada, Shopee, and similar platforms arrive in the
+            Philippines without any import taxes.
           </p>
-          <ul className="mt-3 list-disc list-inside space-y-1.5">
-            <li>The threshold is based on the <strong className="text-foreground">FOB/FCA value</strong> (price of goods, excluding freight and insurance).</li>
-            <li>If dutiable value ≤ ₱10,000 → <span className="text-success-700 font-medium">exempt from duty AND VAT</span></li>
-            <li>If dutiable value &gt; ₱10,000 → duty and VAT apply to the full CIF value</li>
+          <div className="bg-accent-50 border border-accent-300 rounded-xl p-4 mt-4">
+            <p className="text-sm font-semibold text-foreground mb-1">Important: the threshold is based on FOB value, not CIF</p>
+            <p className="text-sm text-muted">
+              The ₱10,000 check applies to the <strong className="text-foreground">FOB/FCA value</strong> —
+              the price of the goods alone, excluding freight and insurance. If the goods value is
+              ₱10,000 or below, the shipment is exempt even if the total CIF (with shipping) exceeds
+              ₱10,000. If the goods value exceeds ₱10,000, duty and VAT are then computed on the
+              full CIF value.
+            </p>
+          </div>
+          <ul className="mt-4 list-disc list-inside space-y-1.5">
+            <li>FOB value ≤ ₱10,000 → <span className="text-success-700 font-medium">exempt from duty AND VAT</span> (courier fees may still apply)</li>
+            <li>FOB value &gt; ₱10,000 → duty and VAT are computed on the full CIF value</li>
           </ul>
         </section>
 
