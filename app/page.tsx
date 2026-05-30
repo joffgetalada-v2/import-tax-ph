@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 import { DE_MINIMIS_PHP } from '@/lib/rates';
 
 export const metadata: Metadata = {
@@ -196,6 +197,9 @@ export default function HomePage() {
               </div>
             ))}
           </dl>
+          <div className="mt-8">
+            <ShareButtons title="Philippine Import Tax Calculator – Free Customs Duty & VAT Estimator" />
+          </div>
         </div>
       </section>
     </>

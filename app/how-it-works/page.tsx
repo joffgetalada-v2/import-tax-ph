@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'How PH Customs Duty & VAT Are Computed',
@@ -219,8 +220,10 @@ export default function HowItWorksPage() {
           </ul>
         </section>
 
+        <ShareButtons title="How Philippine Customs Duty & VAT Are Computed" />
+
         {/* Disclaimer */}
-        <section className="border-t border-border pt-8">
+        <section className="border-t border-border pt-8 mt-8">
           <p className="text-xs text-muted leading-relaxed">
             <strong>Disclaimer:</strong> This guide is for informational purposes only and does
             not constitute legal or tax advice. Customs rules are subject to change. Always verify

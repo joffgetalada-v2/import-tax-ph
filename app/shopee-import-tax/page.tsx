@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Shopee Import Tax Philippines – Overseas Orders',
@@ -96,6 +97,9 @@ export default function ShopeePage() {
             items, check your order summary so you don&apos;t double-count — this tool is best for
             estimating before you buy.
           </p>
+        </div>
+        <div className="mt-8">
+          <ShareButtons title="Shopee Import Tax Philippines – Overseas Orders" />
         </div>
       </section>
     </>

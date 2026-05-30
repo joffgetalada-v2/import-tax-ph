@@ -38,14 +38,28 @@ export default function ImportTaxCalculator({
   const [showFxOverride, setShowFxOverride] = useState(false);
   const [customFxRate, setCustomFxRate] = useState('');
   const [result, setResult] = useState<CalculationResult | null>(null);
-  const [errors, setErrors] = useState<{ itemValue?: string }>({});
+  const [errors, setErrors] = useState<{ itemValue?: string; shipping?: string; insurance?: string }>({});
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
     const numVal = parseFloat(itemValue);
+    const shippingVal = parseFloat(shipping) || 0;
+    const insuranceVal = parseFloat(insurance) || 0;
+    const newErrors: { itemValue?: string; shipping?: string; insurance?: string } = {};
+
     if (!itemValue || isNaN(numVal) || numVal < 0) {
-      setErrors({ itemValue: 'Please enter a valid item value (0 or greater).' });
+      newErrors.itemValue = 'Please enter a valid item value (0 or greater).';
+    }
+    if (shipping !== '' && shippingVal < 0) {
+      newErrors.shipping = 'Shipping cost cannot be negative.';
+    }
+    if (insurance !== '' && insuranceVal < 0) {
+      newErrors.insurance = 'Insurance cannot be negative.';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
       return;
     }
     setErrors({});
@@ -183,8 +197,17 @@ export default function ImportTaxCalculator({
                   placeholder="0.00"
                   value={shipping}
                   onChange={(e) => setShipping(e.target.value)}
-                  className="w-full h-11 px-3 rounded-lg border border-border bg-surface text-sm text-foreground placeholder:text-muted-2 focus:outline-none focus:ring-2 focus:ring-accent-500"
+                  aria-describedby={errors.shipping ? 'shipping-error' : undefined}
+                  aria-invalid={!!errors.shipping}
+                  className={`w-full h-11 px-3 rounded-lg border text-sm text-foreground bg-surface placeholder:text-muted-2 focus:outline-none focus:ring-2 focus:ring-accent-500 ${
+                    errors.shipping ? 'border-red-400 ring-1 ring-red-400' : 'border-border'
+                  }`}
                 />
+                {errors.shipping && (
+                  <p id="shipping-error" role="alert" className="mt-1 text-xs text-red-500">
+                    {errors.shipping}
+                  </p>
+                )}
               </div>
               <div>
                 <label htmlFor="insurance" className="block text-sm font-medium text-foreground mb-1.5">
@@ -200,8 +223,17 @@ export default function ImportTaxCalculator({
                   placeholder="0.00"
                   value={insurance}
                   onChange={(e) => setInsurance(e.target.value)}
-                  className="w-full h-11 px-3 rounded-lg border border-border bg-surface text-sm text-foreground placeholder:text-muted-2 focus:outline-none focus:ring-2 focus:ring-accent-500"
+                  aria-describedby={errors.insurance ? 'insurance-error' : undefined}
+                  aria-invalid={!!errors.insurance}
+                  className={`w-full h-11 px-3 rounded-lg border text-sm text-foreground bg-surface placeholder:text-muted-2 focus:outline-none focus:ring-2 focus:ring-accent-500 ${
+                    errors.insurance ? 'border-red-400 ring-1 ring-red-400' : 'border-border'
+                  }`}
                 />
+                {errors.insurance && (
+                  <p id="insurance-error" role="alert" className="mt-1 text-xs text-red-500">
+                    {errors.insurance}
+                  </p>
+                )}
               </div>
             </div>
 

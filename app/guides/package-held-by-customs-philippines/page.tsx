@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Why Is My Package Held by Customs in the Philippines?',
@@ -222,8 +223,10 @@ export default function PackageHeldPage() {
             </Link>
           </div>
 
+          <ShareButtons title="Why Is My Package Held by Customs in the Philippines?" />
+
           {/* Disclaimer */}
-          <p className="text-xs text-muted border-t border-border pt-6">
+          <p className="text-xs text-muted border-t border-border pt-6 mt-6">
             This guide is for general information only and isn&apos;t legal or customs advice. For
             your specific shipment, check with your courier or the{' '}
             <a

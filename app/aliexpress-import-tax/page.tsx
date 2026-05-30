@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'AliExpress Import Tax Philippines – Customs Calculator',
@@ -92,6 +93,9 @@ export default function AliExpressPage() {
             </a>{' '}
             or the Tariff Commission tariff finder.
           </p>
+        </div>
+        <div className="mt-8">
+          <ShareButtons title="AliExpress Import Tax Philippines – Customs Calculator" />
         </div>
       </section>
     </>

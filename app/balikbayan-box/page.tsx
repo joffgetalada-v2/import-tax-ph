@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Balikbayan Box Tax & Exemption Guide (Philippines)',
@@ -93,6 +94,9 @@ export default function BalikbayanPage() {
             </a>{' '}
             directly.
           </p>
+        </div>
+        <div className="mt-8">
+          <ShareButtons title="Balikbayan Box Tax & Exemption Guide (Philippines)" />
         </div>
       </section>
     </>

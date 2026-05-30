@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Lazada Import Tax Philippines – Overseas Orders',
@@ -99,6 +100,9 @@ export default function LazadaPage() {
             checkout for cross-border items, so in some cases the charge is settled before delivery
             rather than on arrival. Check your order summary to avoid double-counting.
           </p>
+        </div>
+        <div className="mt-8">
+          <ShareButtons title="Lazada Import Tax Philippines – Overseas Orders" />
         </div>
       </section>
     </>

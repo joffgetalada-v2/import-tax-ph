@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Temu Import Tax Philippines – Will You Pay Customs?',
@@ -82,6 +83,9 @@ export default function TemuPage() {
             For orders above ₱10,000 CIF value, expect customs duty (typically 10–15% depending
             on product type) plus 12% VAT on the combined CIF + duty amount.
           </p>
+        </div>
+        <div className="mt-8">
+          <ShareButtons title="Temu Import Tax Philippines – Will You Pay Customs?" />
         </div>
       </section>
     </>

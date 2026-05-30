@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'Shein Import Tax Philippines – Duty & VAT Calculator',
@@ -77,6 +78,9 @@ export default function SheinPage() {
             Single small orders under ₱10,000 CIF value are generally exempt. But if you regularly
             buy multiple packages, be aware of the CAO 02-2025 same-day consolidation rule.
           </p>
+        </div>
+        <div className="mt-8">
+          <ShareButtons title="Shein Import Tax Philippines – Duty & VAT Calculator" />
         </div>
       </section>
     </>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
   title: 'How to Pay Customs Duties and VAT in the Philippines',
@@ -226,8 +227,10 @@ export default function HowToPayPage() {
             </Link>
           </div>
 
+          <ShareButtons title="How to Pay Customs Duties and VAT in the Philippines" />
+
           {/* Disclaimer */}
-          <p className="text-xs text-muted border-t border-border pt-6">
+          <p className="text-xs text-muted border-t border-border pt-6 mt-6">
             This is general guidance, not official customs or legal advice. Exact procedures and
             fees vary by courier and by the{' '}
             <a
