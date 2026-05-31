@@ -20,41 +20,6 @@ const breadcrumbSchema = {
   ],
 };
 
-/* ------------------------------------------------------------------
-   QrImage — simple overflow-hidden crop, no Next.js Image quirks.
-   offsetPx: positive = shift image UP to expose lower part of source.
-   ------------------------------------------------------------------ */
-function QrImage({
-  src,
-  alt,
-  offsetPx = 0,
-}: {
-  src: string;
-  alt: string;
-  offsetPx?: number;
-}) {
-  return (
-    <div
-      className="mx-auto overflow-hidden rounded-lg mb-3 bg-white"
-      style={{ width: 200, height: 200, position: 'relative' }}
-    >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={src}
-        alt={alt}
-        style={{
-          width: '200px',
-          height: 'auto',
-          display: 'block',
-          position: 'absolute',
-          top: `-${offsetPx}px`,
-          left: 0,
-        }}
-      />
-    </div>
-  );
-}
-
 export default function SupportPage() {
   return (
     <>
@@ -96,14 +61,17 @@ export default function SupportPage() {
           <h2 className="text-xl font-bold text-foreground mb-4">Ways to support</h2>
           <div className="space-y-4">
 
-            {/* Ko-fi — clean 820×820 QR, no offset needed */}
+            {/* Ko-fi */}
             <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
               <p className="text-sm font-semibold text-foreground mb-1">Ko-fi</p>
               <p className="text-xs text-muted mb-4">Scan to buy us a coffee</p>
-              <QrImage
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/ko-fi-qrcode.png"
-                alt="Ko-fi QR code — ko-fi.com/gonyot"
-                offsetPx={0}
+                alt="Ko-fi QR code"
+                width={200}
+                height={200}
+                className="rounded-lg mb-4"
               />
               <a
                 href="https://ko-fi.com/gonyot"
@@ -115,40 +83,34 @@ export default function SupportPage() {
               </a>
             </div>
 
-            {/* GCash + Maya side by side */}
+            {/* GCash + Maya */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-              {/*
-                GCash: source 1054×2049
-                Scale to 200px wide → scaled height 389px (overflow 189px)
-                QR centre ≈ 30% of source = 116px in scaled image
-                Shift image up by (116−100) = 16px to centre QR in 200px container
-              */}
               <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
                 <p className="text-sm font-semibold text-foreground mb-1">GCash</p>
                 <p className="text-xs text-muted mb-4">Scan to send</p>
-                <QrImage
-                  src="/gcash-qr.jpg"
-                  alt="GCash QR code — importaxph"
-                  offsetPx={16}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/gcash-qr.png"
+                  alt="GCash QR code"
+                  width={200}
+                  height={200}
+                  className="rounded-lg mb-3"
                 />
                 <p className="text-sm font-semibold text-foreground">importaxph</p>
                 <p className="text-xs text-muted mt-0.5">Transfer fees may apply</p>
               </div>
 
-              {/*
-                Maya: source 1320×1482
-                Scale to 200px wide → scaled height 225px (overflow 25px)
-                QR centre ≈ 55% of source = 124px in scaled image
-                Shift image up by (124−100) = 24px to centre QR in 200px container
-              */}
               <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
                 <p className="text-sm font-semibold text-foreground mb-1">Maya</p>
                 <p className="text-xs text-muted mb-4">Scan to send</p>
-                <QrImage
-                  src="/maya-qr.jpg"
-                  alt="Maya QR code — @gonyot"
-                  offsetPx={24}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/maya-qr.png"
+                  alt="Maya QR code"
+                  width={200}
+                  height={200}
+                  className="rounded-lg mb-3"
                 />
                 <p className="text-sm font-semibold text-foreground">@gonyot</p>
                 <p className="text-xs text-muted mt-0.5">Transfer fees may apply</p>
