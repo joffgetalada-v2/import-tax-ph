@@ -42,14 +42,14 @@ export default function Header() {
           <Link
             href="/"
             className="flex items-center gap-2 group focus-visible:outline-none"
-            aria-label="ImportTax.ph — Home"
+            aria-label="ImportTaxPH — Home"
           >
             <span className="flex items-center justify-center w-7 h-7 rounded bg-accent-500 text-navy-950 font-bold text-sm leading-none select-none">
               ₱
             </span>
             <span className="text-white font-semibold tracking-tight text-base sm:text-lg">
               ImportTax
-              <span className="text-accent-400">.ph</span>
+              <span className="text-accent-400">PH</span>
             </span>
           </Link>
 

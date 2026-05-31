@@ -18,10 +18,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://importtax.ph'),
+  metadataBase: new URL('https://importtaxph.com'),
   title: {
-    default: 'ImportTax.ph — Free Philippine Customs Duty & VAT Calculator',
-    template: '%s | ImportTax.ph',
+    default: 'ImportTaxPH — Free Philippine Customs Duty & VAT Calculator',
+    template: '%s | ImportTaxPH',
   },
   description:
     'Estimate Philippine customs duties and VAT on online purchases from Temu, Shein, AliExpress, and more. Free, fast, and updated for CAO 02-2025.',
@@ -36,10 +36,10 @@ export const metadata: Metadata = {
     'de minimis Philippines',
   ],
   openGraph: {
-    siteName: 'ImportTax.ph',
+    siteName: 'ImportTaxPH',
     locale: 'en_PH',
     type: 'website',
-    title: 'ImportTax.ph — Free Philippine Customs Duty & VAT Calculator',
+    title: 'ImportTaxPH — Free Philippine Customs Duty & VAT Calculator',
     description:
       'Estimate PH customs duties and VAT on your international online orders. Free, updated for CAO 02-2025.',
   },
@@ -67,14 +67,14 @@ export default function RootLayout({
           {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
-            name: 'ImportTax.ph',
-            url: 'https://importtax.ph',
+            name: 'ImportTaxPH',
+            url: 'https://importtaxph.com',
           },
           {
             '@context': 'https://schema.org',
             '@type': 'Organization',
-            name: 'ImportTax.ph',
-            url: 'https://importtax.ph',
+            name: 'ImportTaxPH',
+            url: 'https://importtaxph.com',
             description: 'Free Philippine import tax and customs duty calculator.',
           },
         ]} />

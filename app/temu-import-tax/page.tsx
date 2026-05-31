@@ -19,7 +19,7 @@ export default function TemuPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Temu Philippines Import Tax Calculator',
-      url: 'https://importtax.ph/temu-import-tax',
+      url: 'https://importtaxph.com/temu-import-tax',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +28,8 @@ export default function TemuPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
-        { '@type': 'ListItem', position: 2, name: 'Temu Import Tax', item: 'https://importtax.ph/temu-import-tax' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Temu Import Tax', item: 'https://importtaxph.com/temu-import-tax' },
       ],
     },
   ];

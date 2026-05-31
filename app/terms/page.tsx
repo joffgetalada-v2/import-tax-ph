@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Terms of Use | ImportTax.ph',
+  title: 'Terms of Use | ImportTaxPH',
   description:
-    'The terms governing your use of ImportTax.ph, including limitation of liability for estimate-based results.',
+    'The terms governing your use of ImportTaxPH, including limitation of liability for estimate-based results.',
 };
 
 export default function TermsPage() {
@@ -12,8 +12,8 @@ export default function TermsPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
-      { '@type': 'ListItem', position: 2, name: 'Terms of Use', item: 'https://importtax.ph/terms' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+      { '@type': 'ListItem', position: 2, name: 'Terms of Use', item: 'https://importtaxph.com/terms' },
     ],
   };
 
@@ -27,13 +27,13 @@ export default function TermsPage() {
           <p className="text-sm font-medium text-foreground">Last updated: 2026-05-30</p>
 
           <p>
-            By accessing or using ImportTax.ph (the &quot;Site&quot;), you agree to be bound by
+            By accessing or using ImportTaxPH (the &quot;Site&quot;), you agree to be bound by
             these Terms of Use. If you do not agree, please do not use the Site.
           </p>
 
           <h2 className="text-base font-semibold text-foreground mt-6 mb-1">1. Purpose and nature of the service</h2>
           <p>
-            ImportTax.ph provides a free, browser-based tool to estimate Philippine import duties
+            ImportTaxPH provides a free, browser-based tool to estimate Philippine import duties
             and VAT on international shipments. All computations are performed entirely on your
             device — no data is transmitted to or stored by us.
           </p>
@@ -58,7 +58,7 @@ export default function TermsPage() {
 
           <h2 className="text-base font-semibold text-foreground mt-6 mb-1">4. Limitation of liability</h2>
           <p>
-            To the fullest extent permitted by applicable law, ImportTax.ph and its operators shall
+            To the fullest extent permitted by applicable law, ImportTaxPH and its operators shall
             not be liable for any direct, indirect, incidental, consequential, or special damages
             arising from your use of — or reliance on — any estimate, content, or information on
             this Site. This includes, without limitation, any customs duties, penalties, fees, or
@@ -81,7 +81,7 @@ export default function TermsPage() {
 
           <h2 className="text-base font-semibold text-foreground mt-6 mb-1">6. Intellectual property</h2>
           <p>
-            All original content, design, and code on ImportTax.ph are owned by or licensed to its
+            All original content, design, and code on ImportTaxPH are owned by or licensed to its
             operators. Marketplace names (Temu, Shein, AliExpress, Lazada, Shopee, and others) are
             trademarks of their respective owners; their appearance on this Site is for descriptive
             purposes only and does not imply affiliation or endorsement.
@@ -104,10 +104,10 @@ export default function TermsPage() {
           <p>
             For questions about these Terms, email{' '}
             <a
-              href="mailto:hello@importtax.ph"
+              href="mailto:hello@importtaxph.com"
               className="text-navy-600 underline hover:text-navy-800"
             >
-              hello@importtax.ph
+              hello@importtaxph.com
             </a>
             .
           </p>

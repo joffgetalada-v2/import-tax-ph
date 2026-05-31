@@ -34,7 +34,7 @@ export default function Footer() {
                 ₱
               </span>
               <span className="text-white font-semibold text-base">
-                ImportTax<span className="text-accent-400">.ph</span>
+                ImportTax<span className="text-accent-400">PH</span>
               </span>
             </Link>
             <p className="text-navy-200 text-sm leading-relaxed max-w-xs">
@@ -113,11 +113,11 @@ export default function Footer() {
           </p>
           <p className="text-xs text-muted mt-2">
             Temu, Shein, AliExpress, Lazada, Shopee, and other marketplace names are trademarks of
-            their respective owners. ImportTax.ph is independent and not affiliated with, endorsed
+            their respective owners. ImportTaxPH is independent and not affiliated with, endorsed
             by, or sponsored by any of them.
           </p>
           <p className="text-xs text-muted mt-2">
-            © {new Date().getFullYear()} ImportTax.ph — Not affiliated with the Bureau of Customs
+            © {new Date().getFullYear()} ImportTaxPH — Not affiliated with the Bureau of Customs
             or any government agency.
           </p>
         </div>

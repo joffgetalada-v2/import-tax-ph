@@ -19,7 +19,7 @@ export default function LazadaPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Lazada Philippines Import Tax Calculator',
-      url: 'https://importtax.ph/lazada-import-tax',
+      url: 'https://importtaxph.com/lazada-import-tax',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +28,8 @@ export default function LazadaPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
-        { '@type': 'ListItem', position: 2, name: 'Lazada Import Tax', item: 'https://importtax.ph/lazada-import-tax' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Lazada Import Tax', item: 'https://importtaxph.com/lazada-import-tax' },
       ],
     },
   ];

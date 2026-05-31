@@ -19,7 +19,7 @@ export default function AliExpressPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'AliExpress Philippines Import Tax Calculator',
-      url: 'https://importtax.ph/aliexpress-import-tax',
+      url: 'https://importtaxph.com/aliexpress-import-tax',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +28,8 @@ export default function AliExpressPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
-        { '@type': 'ListItem', position: 2, name: 'AliExpress Import Tax', item: 'https://importtax.ph/aliexpress-import-tax' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'AliExpress Import Tax', item: 'https://importtaxph.com/aliexpress-import-tax' },
       ],
     },
   ];

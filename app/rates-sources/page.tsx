@@ -72,8 +72,8 @@ export default function RatesSourcesPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
-      { '@type': 'ListItem', position: 2, name: 'Rates & Sources', item: 'https://importtax.ph/rates-sources' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+      { '@type': 'ListItem', position: 2, name: 'Rates & Sources', item: 'https://importtaxph.com/rates-sources' },
     ],
   };
 
@@ -279,7 +279,7 @@ export default function RatesSourcesPage() {
             <p className="text-xs text-muted">
               Spotted an error or outdated rate?{' '}
               <a
-                href="mailto:hello@importtax.ph"
+                href="mailto:hello@importtaxph.com"
                 className="text-navy-600 underline hover:text-navy-800"
               >
                 Contact us

@@ -19,7 +19,7 @@ export default function BalikbayanPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Balikbayan Box Import Tax Calculator',
-      url: 'https://importtax.ph/balikbayan-box',
+      url: 'https://importtaxph.com/balikbayan-box',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +28,8 @@ export default function BalikbayanPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
-        { '@type': 'ListItem', position: 2, name: 'Balikbayan Box', item: 'https://importtax.ph/balikbayan-box' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Balikbayan Box', item: 'https://importtaxph.com/balikbayan-box' },
       ],
     },
   ];

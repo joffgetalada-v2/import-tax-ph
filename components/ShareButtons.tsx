@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
-const BASE_URL = 'https://importtax.ph';
+const BASE_URL = 'https://importtaxph.com';
 
 interface ShareButtonsProps {
   title?: string;
@@ -59,7 +59,7 @@ function CheckIcon() {
 }
 
 export default function ShareButtons({
-  title = 'ImportTax.ph — Free Philippine Customs Duty & VAT Calculator',
+  title = 'ImportTaxPH — Free Philippine Customs Duty & VAT Calculator',
 }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
   const pathname = usePathname();

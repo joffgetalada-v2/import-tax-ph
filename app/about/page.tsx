@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About ImportTax.ph – Free PH Customs Calculator',
+  title: 'About ImportTaxPH – Free PH Customs Calculator',
   description:
     'Why we built a free, transparent Philippine import tax calculator and how we keep our duty rates current.',
 };
@@ -10,11 +10,11 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
-      <h1 className="text-3xl font-bold text-foreground mb-6">About ImportTax.ph</h1>
+      <h1 className="text-3xl font-bold text-foreground mb-6">About ImportTaxPH</h1>
 
       <div className="space-y-5 text-sm text-muted leading-relaxed">
         <p>
-          <strong className="text-foreground">ImportTax.ph</strong> is a free, fast web tool that
+          <strong className="text-foreground">ImportTaxPH</strong> is a free, fast web tool that
           helps Filipino online shoppers and importers estimate customs duties and VAT on
           international purchases before they arrive in the Philippines.
         </p>
@@ -33,7 +33,7 @@ export default function AboutPage() {
           <strong className="text-foreground">CAO No. 02-2025</strong> (effective May 7, 2025).
         </p>
         <p>
-          ImportTax.ph is not affiliated with the Bureau of Customs, the Tariff Commission, or any
+          ImportTaxPH is not affiliated with the Bureau of Customs, the Tariff Commission, or any
           government agency. All estimates are for guidance only.
         </p>
 

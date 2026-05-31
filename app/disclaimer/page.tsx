@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Disclaimer | ImportTax.ph',
+  title: 'Disclaimer | ImportTaxPH',
   description:
-    'ImportTax.ph provides estimates for guidance only — not official Bureau of Customs assessments or legal/tax advice.',
+    'ImportTaxPH provides estimates for guidance only — not official Bureau of Customs assessments or legal/tax advice.',
 };
 
 export default function DisclaimerPage() {
@@ -17,7 +17,7 @@ export default function DisclaimerPage() {
         </p>
 
         <p>
-          The information and calculations provided by ImportTax.ph are for{' '}
+          The information and calculations provided by ImportTaxPH are for{' '}
           <strong className="text-foreground">general guidance and informational purposes only</strong>.
           They do not constitute official Bureau of Customs (BOC) assessments, and should not be
           relied upon as legal or tax advice.
@@ -25,7 +25,7 @@ export default function DisclaimerPage() {
 
         <h2 className="text-base font-semibold text-foreground mt-6 mb-1">No official standing</h2>
         <p>
-          ImportTax.ph is not affiliated with, endorsed by, or connected to the Bureau of Customs
+          ImportTaxPH is not affiliated with, endorsed by, or connected to the Bureau of Customs
           of the Philippines, the Tariff Commission, or any other government agency. All estimates
           are produced by a mathematical model using representative duty rates — not official
           tariff rulings.
@@ -73,9 +73,9 @@ export default function DisclaimerPage() {
 
         <h2 className="text-base font-semibold text-foreground mt-6 mb-1">Limitation of liability</h2>
         <p>
-          ImportTax.ph makes no warranties, express or implied, regarding the accuracy,
+          ImportTaxPH makes no warranties, express or implied, regarding the accuracy,
           completeness, or timeliness of the information provided. Use of this tool is entirely
-          at the user&apos;s own risk. ImportTax.ph shall not be liable for any losses, penalties,
+          at the user&apos;s own risk. ImportTaxPH shall not be liable for any losses, penalties,
           or damages arising from reliance on these estimates.
         </p>
       </div>

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | ImportTax.ph',
+  title: 'Privacy Policy | ImportTaxPH',
   description:
-    'How ImportTax.ph handles data: the calculator runs entirely in your browser and collects no personal information.',
+    'How ImportTaxPH handles data: the calculator runs entirely in your browser and collects no personal information.',
 };
 
 export default function PrivacyPage() {
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
         </p>
 
         <p>
-          This Privacy Policy explains how ImportTax.ph (&quot;we&quot;, &quot;our&quot;, or
+          This Privacy Policy explains how ImportTaxPH (&quot;we&quot;, &quot;our&quot;, or
           &quot;the site&quot;) handles information when you use our import tax calculator.
         </p>
 
@@ -25,7 +25,7 @@ export default function PrivacyPage() {
           No personal data collected
         </h2>
         <p>
-          ImportTax.ph is a fully client-side tool. All calculations run in your browser. We do
+          ImportTaxPH is a fully client-side tool. All calculations run in your browser. We do
           not collect, transmit, store, or process any personal information you enter into the
           calculator (item values, shipping costs, etc.).
         </p>
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
           Future advertising
         </h2>
         <p>
-          ImportTax.ph may display third-party advertisements (e.g., Google AdSense) in the
+          ImportTaxPH may display third-party advertisements (e.g., Google AdSense) in the
           future. If implemented, those ad providers may use cookies or tracking technologies
           in accordance with their own privacy policies. We will update this page when ads are
           enabled.

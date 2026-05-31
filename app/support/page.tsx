@@ -3,17 +3,17 @@ import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Support ImportTax.ph – Help Keep It Free',
+  title: 'Support ImportTaxPH – Help Keep It Free',
   description:
-    'ImportTax.ph is free with no paywall. If it helped you, you can chip in to cover hosting and fund new guides and features.',
+    'ImportTaxPH is free with no paywall. If it helped you, you can chip in to cover hosting and fund new guides and features.',
 };
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtax.ph' },
-    { '@type': 'ListItem', position: 2, name: 'Support', item: 'https://importtax.ph/support' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'Support', item: 'https://importtaxph.com/support' },
   ],
 };
 
@@ -26,10 +26,10 @@ export default function SupportPage() {
           Keep it free
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-          Support ImportTax.ph
+          Support ImportTaxPH
         </h1>
         <p className="text-muted text-base leading-relaxed mb-10">
-          ImportTax.ph is, and will stay, <strong className="text-foreground">free to use</strong> —
+          ImportTaxPH is, and will stay, <strong className="text-foreground">free to use</strong> —
           no paywall, no sign-up, and only minimal ads. If the calculator saved you from a surprise
           customs bill and you&apos;d like to help, a small contribution goes a long way.
         </p>
@@ -107,7 +107,7 @@ export default function SupportPage() {
 
         {/* Legal note */}
         <p className="text-xs text-muted border-t border-border pt-6">
-          ImportTax.ph is an independent project, not a registered charity — contributions are
+          ImportTaxPH is an independent project, not a registered charity — contributions are
           voluntary support, not tax-deductible donations.
         </p>
 
