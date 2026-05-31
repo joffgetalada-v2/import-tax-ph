@@ -23,13 +23,13 @@ const howItWorksSteps = [
   },
   {
     n: '2',
-    title: 'We calculate CIF',
-    body: 'The tool converts to PHP and adds shipping + insurance to get the Cost, Insurance & Freight (CIF) value — the basis for Philippine customs duties.',
+    title: 'We convert to PHP',
+    body: 'The item price is converted to Philippine Peso — this is your FOB (goods) value. Shipping and insurance are tracked separately to form the CIF value used later if duties apply.',
   },
   {
     n: '3',
     title: 'De minimis check',
-    body: `If CIF is ₱${DE_MINIMIS_PHP.toLocaleString()} or less, your shipment is tax-free under CAO 02-2025. Otherwise, duty and 12% VAT are computed.`,
+    body: `If the FOB goods value is ₱${DE_MINIMIS_PHP.toLocaleString()} or below, your shipment is tax-free under CAO 02-2025. If taxable, duty and 12% VAT are then computed on the full CIF value.`,
   },
   {
     n: '4',
