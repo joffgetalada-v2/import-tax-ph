@@ -1,12 +1,16 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
+import CopyAddress from '@/components/CopyAddress';
 
 export const metadata: Metadata = {
   title: 'Support ImportTaxPH – Help Keep It Free',
   description:
-    'ImportTaxPH is free with no paywall. If it helped you, you can chip in to cover hosting and fund new guides and features.',
+    'ImportTaxPH is free with no paywall. If it helped you, chip in via Ko-fi, GCash, Maya, or crypto to cover hosting and fund new guides.',
 };
+
+const METAMASK_ADDRESS = '0x07DFCF64faB9C793Ea7d3Dd939A82cF6708d4F8E';
 
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
@@ -57,6 +61,7 @@ export default function SupportPage() {
         <section className="mb-10">
           <h2 className="text-xl font-bold text-foreground mb-4">Ways to support</h2>
           <div className="space-y-4">
+
             {/* Ko-fi */}
             <div className="rounded-xl border border-border bg-surface p-5 flex items-center gap-4">
               <span className="text-2xl leading-none">☕</span>
@@ -64,36 +69,66 @@ export default function SupportPage() {
                 <p className="text-sm font-semibold text-foreground mb-0.5">Buy us a coffee</p>
                 <p className="text-xs text-muted">Quick one-time tip via Ko-fi</p>
               </div>
-              <span className="text-xs text-muted bg-navy-50 border border-border rounded px-2 py-1 whitespace-nowrap">
-                Ko-fi link coming soon
-              </span>
+              <a
+                href="https://ko-fi.com/gonyot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent-500 hover:bg-accent-400 text-navy-950 text-xs font-semibold transition-colors"
+              >
+                Ko-fi →
+              </a>
             </div>
 
-            {/* Stripe */}
-            <div className="rounded-xl border border-border bg-surface p-5 flex items-center gap-4">
-              <span className="text-2xl leading-none">💳</span>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-foreground mb-0.5">One-time contribution</p>
-                <p className="text-xs text-muted">Card payment via Stripe</p>
+            {/* GCash + Maya side by side */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              {/* GCash */}
+              <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
+                <p className="text-sm font-semibold text-foreground mb-1">GCash</p>
+                <p className="text-xs text-muted mb-4">Scan to send</p>
+                <Image
+                  src="/gcash-qr.png"
+                  alt="GCash QR code — importaxph"
+                  width={200}
+                  height={200}
+                  className="rounded-lg mb-3"
+                  unoptimized
+                />
+                <p className="text-sm font-semibold text-foreground">importaxph</p>
+                <p className="text-xs text-muted mt-0.5">Transfer fees may apply</p>
               </div>
-              <span className="text-xs text-muted bg-navy-50 border border-border rounded px-2 py-1 whitespace-nowrap">
-                Link coming soon
-              </span>
+
+              {/* Maya */}
+              <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
+                <p className="text-sm font-semibold text-foreground mb-1">Maya</p>
+                <p className="text-xs text-muted mb-4">Scan to send</p>
+                <Image
+                  src="/maya-qr.png"
+                  alt="Maya QR code — @gonyot"
+                  width={200}
+                  height={200}
+                  className="rounded-lg mb-3"
+                  unoptimized
+                />
+                <p className="text-sm font-semibold text-foreground">@gonyot</p>
+                <p className="text-xs text-muted mt-0.5">Transfer fees may apply</p>
+              </div>
+
             </div>
 
-            {/* GCash */}
+            {/* MetaMask / Crypto */}
             <div className="rounded-xl border border-border bg-surface p-5">
-              <div className="flex items-center gap-4 mb-3">
-                <span className="text-2xl leading-none">📱</span>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-2xl leading-none">🦊</span>
                 <div>
-                  <p className="text-sm font-semibold text-foreground mb-0.5">GCash</p>
-                  <p className="text-xs text-muted">Scan the QR code below for local donors</p>
+                  <p className="text-sm font-semibold text-foreground mb-0.5">MetaMask / Crypto</p>
+                  <p className="text-xs text-muted">Send ETH or any ERC-20 token on any EVM network</p>
                 </div>
               </div>
-              <div className="w-36 h-36 rounded-lg bg-navy-50 border border-border flex items-center justify-center text-xs text-muted">
-                GCash QR<br />coming soon
-              </div>
+              <p className="text-xs text-muted mb-2">Wallet address</p>
+              <CopyAddress address={METAMASK_ADDRESS} />
             </div>
+
           </div>
         </section>
 
