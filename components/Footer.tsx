@@ -17,6 +17,7 @@ const infoLinks = [
   { href: '/rates-sources', label: 'Rates & Sources' },
   { href: '/about', label: 'About' },
   { href: '/support', label: 'Support the Site' },
+  { href: '/contact', label: 'Contact' },
   { href: '/terms', label: 'Terms of Use' },
   { href: '/disclaimer', label: 'Disclaimer' },
   { href: '/privacy', label: 'Privacy Policy' },
