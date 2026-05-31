@@ -62,12 +62,12 @@ export default function SupportPage() {
           <h2 className="text-xl font-bold text-foreground mb-4">Ways to support</h2>
           <div className="space-y-4">
 
-            {/* Ko-fi */}
+            {/* Ko-fi — clean QR image, display as-is */}
             <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
               <p className="text-sm font-semibold text-foreground mb-1">Ko-fi</p>
               <p className="text-xs text-muted mb-4">Scan to buy us a coffee</p>
               <Image
-                src="/kofi-qr.png"
+                src="/ko-fi-qrcode.png"
                 alt="Ko-fi QR code — ko-fi.com/gonyot"
                 width={200}
                 height={200}
@@ -87,34 +87,48 @@ export default function SupportPage() {
             {/* GCash + Maya side by side */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-              {/* GCash */}
+              {/* GCash — crop full screenshot to QR area only */}
               <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
                 <p className="text-sm font-semibold text-foreground mb-1">GCash</p>
                 <p className="text-xs text-muted mb-4">Scan to send</p>
-                <Image
-                  src="/gcash-qr.png"
-                  alt="GCash QR code — importaxph"
-                  width={200}
-                  height={200}
-                  className="rounded-lg mb-3"
-                  unoptimized
-                />
+                {/*
+                  1054×2049 source. Scale to 200px wide → height 389px → 189px overflow.
+                  QR centre sits at ~30% of source height (116px scaled).
+                  objectPosition Y = (116−100)/189 ≈ 8% pulls it to container centre.
+                */}
+                <div className="relative w-[200px] h-[200px] overflow-hidden rounded-lg mb-3">
+                  <Image
+                    src="/gcash-qr.jpg"
+                    alt="GCash QR code — importaxph"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: '50% 8%' }}
+                    unoptimized
+                  />
+                </div>
                 <p className="text-sm font-semibold text-foreground">importaxph</p>
                 <p className="text-xs text-muted mt-0.5">Transfer fees may apply</p>
               </div>
 
-              {/* Maya */}
+              {/* Maya — crop full screenshot to QR area only */}
               <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
                 <p className="text-sm font-semibold text-foreground mb-1">Maya</p>
                 <p className="text-xs text-muted mb-4">Scan to send</p>
-                <Image
-                  src="/maya-qr.png"
-                  alt="Maya QR code — @gonyot"
-                  width={200}
-                  height={200}
-                  className="rounded-lg mb-3"
-                  unoptimized
-                />
+                {/*
+                  1320×1482 source. Scale to 200px wide → height 225px → 25px overflow.
+                  QR centre sits at ~55% of source height (124px scaled).
+                  objectPosition Y = (124−100)/25 ≈ 96% pulls it to container centre.
+                */}
+                <div className="relative w-[200px] h-[200px] overflow-hidden rounded-lg mb-3">
+                  <Image
+                    src="/maya-qr.jpg"
+                    alt="Maya QR code — @gonyot"
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: '50% 96%' }}
+                    unoptimized
+                  />
+                </div>
                 <p className="text-sm font-semibold text-foreground">@gonyot</p>
                 <p className="text-xs text-muted mt-0.5">Transfer fees may apply</p>
               </div>
