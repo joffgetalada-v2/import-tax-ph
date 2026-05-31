@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import CopyAddress from '@/components/CopyAddress';
@@ -20,6 +19,41 @@ const breadcrumbSchema = {
     { '@type': 'ListItem', position: 2, name: 'Support', item: 'https://importtaxph.com/support' },
   ],
 };
+
+/* ------------------------------------------------------------------
+   QrImage — simple overflow-hidden crop, no Next.js Image quirks.
+   offsetPx: positive = shift image UP to expose lower part of source.
+   ------------------------------------------------------------------ */
+function QrImage({
+  src,
+  alt,
+  offsetPx = 0,
+}: {
+  src: string;
+  alt: string;
+  offsetPx?: number;
+}) {
+  return (
+    <div
+      className="mx-auto overflow-hidden rounded-lg mb-3 bg-white"
+      style={{ width: 200, height: 200, position: 'relative' }}
+    >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          width: '200px',
+          height: 'auto',
+          display: 'block',
+          position: 'absolute',
+          top: `-${offsetPx}px`,
+          left: 0,
+        }}
+      />
+    </div>
+  );
+}
 
 export default function SupportPage() {
   return (
@@ -62,17 +96,14 @@ export default function SupportPage() {
           <h2 className="text-xl font-bold text-foreground mb-4">Ways to support</h2>
           <div className="space-y-4">
 
-            {/* Ko-fi — clean QR image, display as-is */}
+            {/* Ko-fi — clean 820×820 QR, no offset needed */}
             <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
               <p className="text-sm font-semibold text-foreground mb-1">Ko-fi</p>
               <p className="text-xs text-muted mb-4">Scan to buy us a coffee</p>
-              <Image
+              <QrImage
                 src="/ko-fi-qrcode.png"
                 alt="Ko-fi QR code — ko-fi.com/gonyot"
-                width={200}
-                height={200}
-                className="rounded-lg mb-4"
-                unoptimized
+                offsetPx={0}
               />
               <a
                 href="https://ko-fi.com/gonyot"
@@ -87,48 +118,38 @@ export default function SupportPage() {
             {/* GCash + Maya side by side */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-              {/* GCash — crop full screenshot to QR area only */}
+              {/*
+                GCash: source 1054×2049
+                Scale to 200px wide → scaled height 389px (overflow 189px)
+                QR centre ≈ 30% of source = 116px in scaled image
+                Shift image up by (116−100) = 16px to centre QR in 200px container
+              */}
               <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
                 <p className="text-sm font-semibold text-foreground mb-1">GCash</p>
                 <p className="text-xs text-muted mb-4">Scan to send</p>
-                {/*
-                  1054×2049 source. Scale to 200px wide → height 389px → 189px overflow.
-                  QR centre sits at ~30% of source height (116px scaled).
-                  objectPosition Y = (116−100)/189 ≈ 8% pulls it to container centre.
-                */}
-                <div className="relative w-[200px] h-[200px] overflow-hidden rounded-lg mb-3">
-                  <Image
-                    src="/gcash-qr.jpg"
-                    alt="GCash QR code — importaxph"
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: '50% 8%' }}
-                    unoptimized
-                  />
-                </div>
+                <QrImage
+                  src="/gcash-qr.jpg"
+                  alt="GCash QR code — importaxph"
+                  offsetPx={16}
+                />
                 <p className="text-sm font-semibold text-foreground">importaxph</p>
                 <p className="text-xs text-muted mt-0.5">Transfer fees may apply</p>
               </div>
 
-              {/* Maya — crop full screenshot to QR area only */}
+              {/*
+                Maya: source 1320×1482
+                Scale to 200px wide → scaled height 225px (overflow 25px)
+                QR centre ≈ 55% of source = 124px in scaled image
+                Shift image up by (124−100) = 24px to centre QR in 200px container
+              */}
               <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
                 <p className="text-sm font-semibold text-foreground mb-1">Maya</p>
                 <p className="text-xs text-muted mb-4">Scan to send</p>
-                {/*
-                  1320×1482 source. Scale to 200px wide → height 225px → 25px overflow.
-                  QR centre sits at ~55% of source height (124px scaled).
-                  objectPosition Y = (124−100)/25 ≈ 96% pulls it to container centre.
-                */}
-                <div className="relative w-[200px] h-[200px] overflow-hidden rounded-lg mb-3">
-                  <Image
-                    src="/maya-qr.jpg"
-                    alt="Maya QR code — @gonyot"
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: '50% 96%' }}
-                    unoptimized
-                  />
-                </div>
+                <QrImage
+                  src="/maya-qr.jpg"
+                  alt="Maya QR code — @gonyot"
+                  offsetPx={24}
+                />
                 <p className="text-sm font-semibold text-foreground">@gonyot</p>
                 <p className="text-xs text-muted mt-0.5">Transfer fees may apply</p>
               </div>
