@@ -63,19 +63,24 @@ export default function SupportPage() {
           <div className="space-y-4">
 
             {/* Ko-fi */}
-            <div className="rounded-xl border border-border bg-surface p-5 flex items-center gap-4">
-              <span className="text-2xl leading-none">☕</span>
-              <div className="flex-1 min-w-0">
-                <p className="text-sm font-semibold text-foreground mb-0.5">Buy us a coffee</p>
-                <p className="text-xs text-muted">Quick one-time tip via Ko-fi</p>
-              </div>
+            <div className="rounded-xl border border-border bg-surface p-5 flex flex-col items-center text-center">
+              <p className="text-sm font-semibold text-foreground mb-1">Ko-fi</p>
+              <p className="text-xs text-muted mb-4">Scan to buy us a coffee</p>
+              <Image
+                src="/kofi-qr.png"
+                alt="Ko-fi QR code — ko-fi.com/gonyot"
+                width={200}
+                height={200}
+                className="rounded-lg mb-4"
+                unoptimized
+              />
               <a
                 href="https://ko-fi.com/gonyot"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent-500 hover:bg-accent-400 text-navy-950 text-xs font-semibold transition-colors"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-accent-500 hover:bg-accent-400 text-navy-950 text-xs font-semibold transition-colors"
               >
-                Ko-fi →
+                ☕ ko-fi.com/gonyot →
               </a>
             </div>
 
