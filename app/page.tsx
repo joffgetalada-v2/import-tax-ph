@@ -6,12 +6,12 @@ import ShareButtons from '@/components/ShareButtons';
 import { DE_MINIMIS_PHP } from '@/lib/rates';
 
 export const metadata: Metadata = {
-  title: 'Philippine Import Tax Calculator – Customs Duty & VAT',
+  title: 'Philippine Import Tax Calculator – Free Customs Duty & VAT Estimator',
   description:
-    'Free calculator for Philippine customs duty and 12% VAT on international orders. Updated for the ₱10,000 de minimis rule (CAO 02-2025).',
+    'Free calculator for Philippine customs duty and 12% VAT on Temu, Shein, AliExpress, Lazada, Shopee, and international orders. Instant estimate — updated for the ₱10,000 de minimis rule (CAO 02-2025).',
   openGraph: {
-    title: 'Philippine Import Tax Calculator – Customs Duty & VAT',
-    description: 'Free calculator for Philippine customs duty and 12% VAT on international orders. Updated for the ₱10,000 de minimis rule (CAO 02-2025).',
+    title: 'Philippine Import Tax Calculator – Free Customs Duty & VAT Estimator',
+    description: 'Free calculator for Philippine customs duty and 12% VAT on Temu, Shein, AliExpress, Lazada, Shopee, and international orders. Instant estimate — updated for CAO 02-2025.',
   },
 };
 

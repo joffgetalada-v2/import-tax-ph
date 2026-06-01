@@ -11,9 +11,9 @@ import {
 } from '@/lib/rates';
 
 export const metadata: Metadata = {
-  title: 'Duty Rates & Sources – How We Calculate',
+  title: 'Philippine Import Duty Rates & Sources – CAO 02-2025',
   description:
-    'Our category duty rates, the ₱10,000 de minimis and 12% VAT bases, exchange-rate assumptions, and the official sources behind them.',
+    'Every duty rate, de minimis threshold, 12% VAT base, and exchange rate used by ImportTaxPH — with official Bureau of Customs and Tariff Commission sources. Verified 2026, per CAO No. 02-2025.',
 };
 
 const categories = [

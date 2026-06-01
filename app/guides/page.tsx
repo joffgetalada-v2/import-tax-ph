@@ -3,9 +3,14 @@ import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Philippine Import & Customs Guides',
+  title: 'Philippine Customs & Import Tax Guides – Online Shoppers',
   description:
-    'Plain-English guides on Philippine customs rules — why packages get held, how to pay duties, de minimis, and more.',
+    'Plain-English guides for Philippine online shoppers — why packages are held at BOC, how to pay customs duty, the ₱10,000 de minimis threshold, and what Temu, Shein, AliExpress, Lazada shoppers need to know.',
+  openGraph: {
+    title: 'Philippine Customs & Import Tax Guides – Online Shoppers',
+    description:
+      'Why packages are held at Philippine customs, how to pay duty and VAT, and what every Temu, Shein, AliExpress, Lazada, and Shopee shopper needs to know.',
+  },
 };
 
 const breadcrumbSchema = {

@@ -3,9 +3,9 @@ import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Contact ImportTaxPH – Rate Corrections & Questions',
   description:
-    'Get in touch with ImportTaxPH — report an outdated duty rate, flag a bug, or ask a general question about Philippine customs and import tax.',
+    'Report an outdated Philippine customs duty rate, flag a calculator bug, or ask a question. Email hello@importtaxph.com — we typically reply within 1–3 business days.',
 };
 
 const breadcrumbSchema = {

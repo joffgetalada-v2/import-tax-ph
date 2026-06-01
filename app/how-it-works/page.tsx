@@ -3,9 +3,14 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
-  title: 'How PH Customs Duty & VAT Are Computed',
+  title: 'How Philippine Customs Duty & VAT Are Computed',
   description:
-    'A plain-English guide to how the Bureau of Customs computes duty and 12% VAT, the ₱10,000 de minimis, and the consolidation rule.',
+    'Plain-English guide: how the Bureau of Customs computes duty and 12% VAT, the ₱10,000 FOB de minimis threshold, the same-day consolidation rule (CAO 02-2025), CIF value, and HS/AHTN tariff rates.',
+  openGraph: {
+    title: 'How Philippine Customs Duty & VAT Are Computed',
+    description:
+      'Plain-English guide: the ₱10,000 FOB de minimis, same-day consolidation rule, CIF value, duty rates, and 12% VAT computation — per CAO 02-2025.',
+  },
 };
 
 const howToSchema = {

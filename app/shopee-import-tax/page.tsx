@@ -4,9 +4,9 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
-  title: 'Shopee Import Tax Philippines – Overseas Orders',
+  title: 'Shopee Import Tax Philippines – International Seller Duty Calculator',
   description:
-    'Local Shopee orders carry no import tax; overseas orders may. Estimate Philippine customs duty and 12% VAT for free.',
+    'Shopee PH local seller orders are duty-free. Shopee International or overseas seller listings above ₱10,000 FOB face Philippine customs duty + 12% VAT. Free calculator — updated for CAO 02-2025.',
   openGraph: {
     title: 'Shopee Import Tax Philippines – Overseas Orders',
     description: 'Local Shopee orders carry no import tax; overseas orders may. Estimate Philippine customs duty and 12% VAT for free.',

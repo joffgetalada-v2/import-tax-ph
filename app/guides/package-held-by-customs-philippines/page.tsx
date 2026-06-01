@@ -4,9 +4,14 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
-  title: 'Why Is My Package Held by Customs in the Philippines?',
+  title: 'Why Is My Package Held by Customs Philippines? 6 Reasons Explained',
   description:
-    'Temu, Shein, or AliExpress order stuck "for customs clearance"? Here are the real reasons packages are held in the Philippines and what to do.',
+    '6 reasons your Temu, Shein, AliExpress, Lazada or Shopee order is stuck at Philippine customs — value over ₱10,000, consolidation rule, inspection, restricted items, or pending duties. What to do next.',
+  openGraph: {
+    title: 'Why Is My Package Held by Customs Philippines? 6 Reasons Explained',
+    description:
+      'Order stuck "for customs clearance"? 6 real reasons — over ₱10,000 threshold, consolidation rule, inspection, permits, or unpaid duties — and what to do to get it released.',
+  },
 };
 
 const articleSchema = {

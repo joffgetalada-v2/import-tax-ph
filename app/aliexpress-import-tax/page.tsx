@@ -4,9 +4,9 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
-  title: 'AliExpress Import Tax Philippines – Customs Calculator',
+  title: 'AliExpress Import Tax Philippines – Customs Duty & VAT Calculator',
   description:
-    'Estimate PH customs duty and VAT on AliExpress orders before they arrive. Free and updated for the ₱10,000 de minimis rule.',
+    'AliExpress duty rates vary by product — electronics can be 0%, clothing up to 15%. Estimate Philippine customs duty and 12% VAT on any AliExpress order before it arrives. Free, updated 2026.',
   openGraph: {
     title: 'AliExpress Import Tax Philippines – Customs Calculator',
     description: 'Estimate PH customs duty and VAT on AliExpress orders before they arrive. Free and updated for the ₱10,000 de minimis rule.',

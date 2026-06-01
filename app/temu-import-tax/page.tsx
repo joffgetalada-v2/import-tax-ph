@@ -4,9 +4,9 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
-  title: 'Temu Import Tax Philippines – Will You Pay Customs?',
+  title: 'Temu Import Tax Philippines – Customs Duty & VAT Calculator',
   description:
-    'Estimate customs duty and VAT on your Temu order to the Philippines. Free tool, updated for the ₱10,000 de minimis threshold.',
+    'Temu ships directly from China — most orders under ₱10,000 FOB are tax-free under CAO 02-2025. Larger or bundled orders face customs duty (10–15%) plus 12% VAT. Free calculator, instant results.',
   openGraph: {
     title: 'Temu Import Tax Philippines – Will You Pay Customs?',
     description: 'Estimate customs duty and VAT on your Temu order to the Philippines. Free tool, updated for the ₱10,000 de minimis threshold.',

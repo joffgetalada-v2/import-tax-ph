@@ -4,9 +4,14 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
-  title: 'How to Pay Customs Duties and VAT in the Philippines',
+  title: 'How to Pay Customs Duties & VAT in the Philippines – Couriers vs PHLPOST',
   description:
-    'Your import is over ₱10,000 — now what? A plain guide to how you actually pay customs duty and 12% VAT in the Philippines, via courier or PHLPOST.',
+    'Order exceeded ₱10,000? Here\'s exactly how Philippine customs duty and 12% VAT are paid — via courier (DHL, FedEx, LBC) or PHLPOST, what documents you need, and tips to avoid storage fees.',
+  openGraph: {
+    title: 'How to Pay Customs Duties & VAT in the Philippines – Couriers vs PHLPOST',
+    description:
+      'How Philippine customs duty and 12% VAT are paid after your order exceeds ₱10,000 — courier DDU/DDP, PHLPOST process, required documents, and practical tips.',
+  },
 };
 
 const articleSchema = {

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Disclaimer | ImportTaxPH',
+  title: 'Disclaimer | ImportTaxPH – Philippine Customs Calculator',
   description:
-    'ImportTaxPH provides estimates for guidance only — not official Bureau of Customs assessments or legal/tax advice.',
+    'ImportTaxPH duty and VAT calculations are estimates for guidance only — not official Bureau of Customs (BOC) assessments, legal advice, or tax advice. Always verify with BOC for high-value imports.',
 };
 
 export default function DisclaimerPage() {

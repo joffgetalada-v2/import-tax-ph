@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About ImportTaxPH – Free PH Customs Calculator',
+  title: 'About ImportTaxPH – Free Philippine Customs Duty Calculator',
   description:
-    'Why we built a free, transparent Philippine import tax calculator and how we keep our duty rates current.',
+    'ImportTaxPH is a free, browser-based Philippine customs duty and VAT calculator built for shoppers on Temu, Shein, AliExpress, Lazada, Shopee, and OFWs sending balikbayan boxes. No data collected.',
 };
 
 export default function AboutPage() {
