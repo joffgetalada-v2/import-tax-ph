@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
@@ -69,7 +69,7 @@ const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'Philippine Import Tax Calculator',
-  url: 'https://importtaxph.com',
+  url: 'https://www.importtaxph.com',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -89,7 +89,7 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
   ],
 };
 
@@ -176,6 +176,23 @@ export default function HomePage() {
           >
             Full guide: how Philippine customs computes duties →
           </Link>
+        </div>
+      </section>
+
+      {/* Resource links — internal linking for crawlers and users */}
+      <section className="border-t border-border">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
+            <Link href="/guides" className="text-sm text-navy-600 hover:text-navy-800 font-medium transition-colors">
+              Import &amp; customs guides →
+            </Link>
+            <Link href="/rates-sources" className="text-sm text-navy-600 hover:text-navy-800 font-medium transition-colors">
+              Duty rates &amp; sources →
+            </Link>
+            <Link href="/about" className="text-sm text-navy-600 hover:text-navy-800 font-medium transition-colors">
+              About ImportTaxPH →
+            </Link>
+          </div>
         </div>
       </section>
 

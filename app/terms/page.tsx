@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
@@ -12,8 +12,8 @@ export default function TermsPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
-      { '@type': 'ListItem', position: 2, name: 'Terms of Use', item: 'https://importtaxph.com/terms' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
+      { '@type': 'ListItem', position: 2, name: 'Terms of Use', item: 'https://www.importtaxph.com/terms' },
     ],
   };
 

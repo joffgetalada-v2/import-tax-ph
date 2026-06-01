@@ -1,9 +1,9 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
 
-const BASE_URL = 'https://importtaxph.com';
+const BASE_URL = 'https://www.importtaxph.com';
 
 interface ShareButtonsProps {
   title?: string;

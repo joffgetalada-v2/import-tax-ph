@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
@@ -19,7 +19,7 @@ export default function BalikbayanPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Balikbayan Box Import Tax Calculator',
-      url: 'https://importtaxph.com/balikbayan-box',
+      url: 'https://www.importtaxph.com/balikbayan-box',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +28,8 @@ export default function BalikbayanPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
-        { '@type': 'ListItem', position: 2, name: 'Balikbayan Box', item: 'https://importtaxph.com/balikbayan-box' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Balikbayan Box', item: 'https://www.importtaxph.com/balikbayan-box' },
       ],
     },
   ];

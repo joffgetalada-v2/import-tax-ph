@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://importtaxph.com'),
+  metadataBase: new URL('https://www.importtaxph.com'),
   title: {
     default: 'ImportTaxPH — Free Philippine Customs Duty & VAT Calculator',
     template: '%s | ImportTaxPH',
@@ -68,13 +68,13 @@ export default function RootLayout({
             '@context': 'https://schema.org',
             '@type': 'WebSite',
             name: 'ImportTaxPH',
-            url: 'https://importtaxph.com',
+            url: 'https://www.importtaxph.com',
           },
           {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'ImportTaxPH',
-            url: 'https://importtaxph.com',
+            url: 'https://www.importtaxph.com',
             description: 'Free Philippine import tax and customs duty calculator.',
           },
         ]} />

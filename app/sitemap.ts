@@ -1,6 +1,6 @@
-import type { MetadataRoute } from 'next';
+﻿import type { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://importtaxph.com';
+const BASE_URL = 'https://www.importtaxph.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

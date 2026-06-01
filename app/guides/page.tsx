@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
@@ -12,8 +12,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
-    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://importtaxph.com/guides' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://www.importtaxph.com/guides' },
   ],
 };
 

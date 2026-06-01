@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
@@ -15,11 +15,11 @@ const articleSchema = {
   headline: 'Why Is My Package Held by Customs in the Philippines?',
   description:
     "Why parcels from Temu, Shein, and AliExpress get held, how long it takes, and what you can do.",
-  url: 'https://importtaxph.com/guides/package-held-by-customs-philippines',
+  url: 'https://www.importtaxph.com/guides/package-held-by-customs-philippines',
   publisher: {
     '@type': 'Organization',
     name: 'ImportTaxPH',
-    url: 'https://importtaxph.com',
+    url: 'https://www.importtaxph.com',
   },
 };
 
@@ -58,13 +58,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
-    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://importtaxph.com/guides' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://www.importtaxph.com/guides' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Why Is My Package Held?',
-      item: 'https://importtaxph.com/guides/package-held-by-customs-philippines',
+      item: 'https://www.importtaxph.com/guides/package-held-by-customs-philippines',
     },
   ],
 };

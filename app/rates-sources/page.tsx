@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import JsonLd from '@/components/JsonLd';
 import {
   DE_MINIMIS_PHP,
@@ -72,8 +72,8 @@ export default function RatesSourcesPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
-      { '@type': 'ListItem', position: 2, name: 'Rates & Sources', item: 'https://importtaxph.com/rates-sources' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
+      { '@type': 'ListItem', position: 2, name: 'Rates & Sources', item: 'https://www.importtaxph.com/rates-sources' },
     ],
   };
 

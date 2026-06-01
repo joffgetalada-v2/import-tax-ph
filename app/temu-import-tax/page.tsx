@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
@@ -19,7 +19,7 @@ export default function TemuPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Temu Philippines Import Tax Calculator',
-      url: 'https://importtaxph.com/temu-import-tax',
+      url: 'https://www.importtaxph.com/temu-import-tax',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +28,8 @@ export default function TemuPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
-        { '@type': 'ListItem', position: 2, name: 'Temu Import Tax', item: 'https://importtaxph.com/temu-import-tax' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Temu Import Tax', item: 'https://www.importtaxph.com/temu-import-tax' },
       ],
     },
   ];
@@ -44,8 +44,9 @@ export default function TemuPage() {
               Temu Philippines
             </p>
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-4">
-              Will I Pay Import Tax on My{' '}
-              <span className="text-accent-400">Temu Order?</span>
+              Temu Import Tax{' '}
+              <span className="text-accent-400">Philippines</span>
+              {' '}– Will You Pay Customs?
             </h1>
             <p className="text-navy-100 text-base leading-relaxed">
               Temu ships directly from China. Low-value orders often qualify for the ₱10,000 de

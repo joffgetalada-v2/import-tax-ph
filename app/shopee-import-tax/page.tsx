@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
@@ -19,7 +19,7 @@ export default function ShopeePage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Shopee Philippines Import Tax Calculator',
-      url: 'https://importtaxph.com/shopee-import-tax',
+      url: 'https://www.importtaxph.com/shopee-import-tax',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +28,8 @@ export default function ShopeePage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
-        { '@type': 'ListItem', position: 2, name: 'Shopee Import Tax', item: 'https://importtaxph.com/shopee-import-tax' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Shopee Import Tax', item: 'https://www.importtaxph.com/shopee-import-tax' },
       ],
     },
   ];
@@ -44,8 +44,9 @@ export default function ShopeePage() {
               Shopee Philippines
             </p>
             <h1 className="text-3xl sm:text-4xl font-bold tracking-tight leading-tight mb-4">
-              Will You Be Charged Import Tax{' '}
-              <span className="text-accent-400">on Shopee?</span>
+              Shopee Import Tax{' '}
+              <span className="text-accent-400">Philippines</span>
+              {' '}– Will You Pay Customs?
             </h1>
             <p className="text-navy-100 text-base leading-relaxed">
               The large majority of Shopee orders are from local Filipino sellers shipped within
