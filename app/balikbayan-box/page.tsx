@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description:
     'Qualified OFWs may send balikbayan boxes duty and VAT-free up to ₱150,000, up to 3 times per year. Boxes that don\'t qualify use the ₱10,000 de minimis rule. Estimate potential customs charges.',
   openGraph: {
-    title: 'Balikbayan Box Tax & Exemption Guide (Philippines)',
-    description: 'How balikbayan box duty/tax exemptions work for OFWs in the Philippines, plus what happens above the exemption limit.',
+    title: 'Balikbayan Box Tax Philippines – OFW Duty Exemption Guide & Calculator',
+    description: 'Qualified OFWs may send balikbayan boxes duty and VAT-free up to ₱150,000, up to 3 times per year. Boxes that don\'t qualify use the ₱10,000 de minimis rule. Estimate potential customs charges.',
   },
 };
 
@@ -97,7 +97,7 @@ export default function BalikbayanPage() {
           </p>
         </div>
         <div className="mt-8">
-          <ShareButtons title="Balikbayan Box Tax & Exemption Guide (Philippines)" />
+          <ShareButtons title="Balikbayan Box Tax Philippines – OFW Duty Exemption Guide & Calculator" />
         </div>
       </section>
     </>

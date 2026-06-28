@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description:
     'Lazada PH orders from local sellers are duty-free. Cross-border LazGlobal listings shipped from abroad face Philippine customs duty + 12% VAT above ₱10,000 FOB. Free calculator — check before you buy.',
   openGraph: {
-    title: 'Lazada Import Tax Philippines – Overseas Orders',
-    description: "Local Lazada orders aren't taxed; cross-border (LazGlobal) orders may be. Estimate customs duty and 12% VAT for free.",
+    title: 'Lazada Import Tax Philippines – LazGlobal & Cross-Border Duty Calculator',
+    description: 'Lazada PH orders from local sellers are duty-free. Cross-border LazGlobal listings shipped from abroad face Philippine customs duty + 12% VAT above ₱10,000 FOB. Free calculator — check before you buy.',
   },
 };
 
@@ -104,7 +104,7 @@ export default function LazadaPage() {
           </p>
         </div>
         <div className="mt-8">
-          <ShareButtons title="Lazada Import Tax Philippines – Overseas Orders" />
+          <ShareButtons title="Lazada Import Tax Philippines – LazGlobal & Cross-Border Duty Calculator" />
         </div>
       </section>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/about' },
@@ -8,9 +9,19 @@ export const metadata: Metadata = {
     'ImportTaxPH is a free, browser-based Philippine customs duty and VAT calculator built for shoppers on Temu, Shein, AliExpress, Lazada, Shopee, and OFWs sending balikbayan boxes. No data collected.',
 };
 
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'About', item: 'https://importtaxph.com/about' },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <JsonLd data={breadcrumb} />
       <h1 className="text-3xl font-bold text-foreground mb-6">About ImportTaxPH</h1>
 
       <div className="space-y-5 text-sm text-muted leading-relaxed">

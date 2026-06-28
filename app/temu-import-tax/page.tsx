@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description:
     'Temu ships directly from China — most orders under ₱10,000 FOB are tax-free under CAO 02-2025. Larger or bundled orders face customs duty (10–15%) plus 12% VAT. Free calculator, instant results.',
   openGraph: {
-    title: 'Temu Import Tax Philippines – Will You Pay Customs?',
-    description: 'Estimate customs duty and VAT on your Temu order to the Philippines. Free tool, updated for the ₱10,000 de minimis threshold.',
+    title: 'Temu Import Tax Philippines – Customs Duty & VAT Calculator',
+    description: 'Temu ships directly from China — most orders under ₱10,000 FOB are tax-free under CAO 02-2025. Larger or bundled orders face customs duty (10–15%) plus 12% VAT. Free calculator, instant results.',
   },
 };
 
@@ -87,7 +87,7 @@ export default function TemuPage() {
           </p>
         </div>
         <div className="mt-8">
-          <ShareButtons title="Temu Import Tax Philippines – Will You Pay Customs?" />
+          <ShareButtons title="Temu Import Tax Philippines – Customs Duty & VAT Calculator" />
         </div>
       </section>
     </>

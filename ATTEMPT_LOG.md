@@ -21,3 +21,15 @@ Loop Engineering Method — one row per attempt: `phase | hypothesis | change ma
 
 ### Notes
 - Host redirect (apex↔www) intentionally NOT in code — handled at Vercel dashboard. Dashboard 307→308 change for `www` is a human handoff (HANDOFF.md / SEARCH_CONSOLE_CHECKLIST.md).
+- Merged to `main` (commit 409a86f, fast-forward) per user authorization.
+
+## Phase 2 — P1: on-page technical SEO
+
+| # | phase | hypothesis / finding | change made | verify result |
+|---|-------|----------------------|-------------|---------------|
+| 1 | P2 | Audit: all 18 pages have exactly one `<h1>` (✓); titles/descriptions unique (✓); but 6 marketplace pages had stale `og:title`/`og:description` from the f8240cb title rewrite, and about/disclaimer/privacy had NO JSON-LD. Marketplace pages have no visible FAQ → FAQPage schema there would violate Google policy (deferred to Phase 3 content). | Synced `og:title`+`og:description` to the corrected meta on all 6 marketplace pages; synced their `ShareButtons` titles. Added `BreadcrumbList` JSON-LD to about/disclaimer/privacy. | **PASS** — build exit 0; og:title == meta title on all 6 marketplace pages; twitter:card/title/description emit; og:image (1200px PNG) present; BreadcrumbList now on about/disclaimer/privacy. |
+| 2 | P2 | Lighthouse target: SEO=100, Perf≥90 (mobile), A11y≥95. | Ran `npx lighthouse` on `/` (headless Chrome). | **PASS** — Performance 96, Accessibility 97, Best-Practices 96, **SEO 100**. (Chrome ran; trailing EPERM was only a temp-dir cleanup error after the report was written.) |
+
+### Notes
+- Structured-data coverage now: WebApplication on home + 6 marketplace; FAQPage on home + 2 guides (where visible FAQs exist); HowTo on how-it-works; BreadcrumbList on every route; ContactPage on contact; Article on the 2 guides.
+- FAQ sections (visible Q&A + FAQPage schema) for the 6 marketplace pages deferred to Phase 3 (content), to keep schema tied to visible content per Google policy.

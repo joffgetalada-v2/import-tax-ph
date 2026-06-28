@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/disclaimer' },
@@ -7,9 +8,19 @@ export const metadata: Metadata = {
     'ImportTaxPH duty and VAT calculations are estimates for guidance only — not official Bureau of Customs (BOC) assessments, legal advice, or tax advice. Always verify with BOC for high-value imports.',
 };
 
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'Disclaimer', item: 'https://importtaxph.com/disclaimer' },
+  ],
+};
+
 export default function DisclaimerPage() {
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <JsonLd data={breadcrumb} />
       <h1 className="text-3xl font-bold text-foreground mb-6">Disclaimer</h1>
 
       <div className="space-y-5 text-sm text-muted leading-relaxed">

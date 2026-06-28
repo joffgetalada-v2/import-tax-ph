@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/privacy' },
@@ -7,9 +8,19 @@ export const metadata: Metadata = {
     'How ImportTaxPH handles data: the calculator runs entirely in your browser and collects no personal information.',
 };
 
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'Privacy Policy', item: 'https://importtaxph.com/privacy' },
+  ],
+};
+
 export default function PrivacyPage() {
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <JsonLd data={breadcrumb} />
       <h1 className="text-3xl font-bold text-foreground mb-6">Privacy Policy</h1>
 
       <div className="space-y-5 text-sm text-muted leading-relaxed">

@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description:
     'Shein clothing and accessories from China and Singapore face ~15% customs duty plus 12% VAT on orders over ₱10,000 FOB. Free estimator — instant results, no sign-up, updated for CAO 02-2025.',
   openGraph: {
-    title: 'Shein Import Tax Philippines – Duty & VAT Calculator',
-    description: 'Find out if your Shein order is taxed in the Philippines. Free duty + 12% VAT estimator, updated for CAO 02-2025.',
+    title: 'Shein Import Tax Philippines – Clothing Duty & VAT Calculator',
+    description: 'Shein clothing and accessories from China and Singapore face ~15% customs duty plus 12% VAT on orders over ₱10,000 FOB. Free estimator — instant results, no sign-up, updated for CAO 02-2025.',
   },
 };
 
@@ -81,7 +81,7 @@ export default function SheinPage() {
           </p>
         </div>
         <div className="mt-8">
-          <ShareButtons title="Shein Import Tax Philippines – Duty & VAT Calculator" />
+          <ShareButtons title="Shein Import Tax Philippines – Clothing Duty & VAT Calculator" />
         </div>
       </section>
     </>
