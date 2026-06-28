@@ -1,0 +1,10 @@
+/* TEAM */
+Site: ImportTaxPH — Free Philippine Customs Duty & VAT Calculator
+Contact: hello [at] importtaxph.com
+
+/* SITE */
+Last update: 2026-06-01
+Language: English / Filipino
+Standards: HTML5, CSS3
+Components: Next.js, React, Tailwind CSS
+Hosting: Vercel
