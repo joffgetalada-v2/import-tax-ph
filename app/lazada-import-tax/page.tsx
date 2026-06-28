@@ -2,6 +2,7 @@
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
+import FaqSection from '@/components/FaqSection';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/lazada-import-tax' },
@@ -103,6 +104,14 @@ export default function LazadaPage() {
             rather than on arrival. Check your order summary to avoid double-counting.
           </p>
         </div>
+        <FaqSection
+          faqs={[
+            { q: 'Do I pay import tax on Lazada orders?', a: 'Orders from local Philippine sellers are domestic and carry no customs duty. Only cross-border or LazGlobal listings shipped from abroad are imports assessed against the ₱10,000 de minimis.' },
+            { q: 'How do I know if a Lazada order is an import?', a: 'Look for LazGlobal or International labels, or longer cross-border shipping times. Those ship from abroad and are assessed by the Bureau of Customs like any imported parcel.' },
+            { q: 'How much tax applies to a cross-border Lazada order?', a: 'If the goods FOB value is ₱10,000 or below, it is exempt. Above that, customs duty on the CIF value plus 12% VAT apply.' },
+            { q: 'Does Lazada collect the tax upfront?', a: 'For cross-border items, Lazada often shows and collects an import tax and duties estimate at checkout. Check your order summary so you do not double-count what is owed on arrival.' },
+          ]}
+        />
         <div className="mt-8">
           <ShareButtons title="Lazada Import Tax Philippines – LazGlobal & Cross-Border Duty Calculator" />
         </div>

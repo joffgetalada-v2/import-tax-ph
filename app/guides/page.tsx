@@ -25,6 +25,27 @@ const breadcrumbSchema = {
 
 const guides = [
   {
+    href: '/guides/how-to-compute-import-tax-philippines',
+    title: 'How to Compute Import Tax in the Philippines',
+    description:
+      'Step by step: FOB vs CIF, the ₱10,000 de minimis, customs duty, and 12% VAT — with a worked example.',
+    tag: 'Calculation',
+  },
+  {
+    href: '/guides/de-minimis-philippines',
+    title: 'The ₱10,000 De Minimis Rule (CAO 02-2025)',
+    description:
+      'What the ₱10,000 FOB exemption covers, the same-day consolidation rule, and when duty and VAT kick in.',
+    tag: 'De minimis',
+  },
+  {
+    href: '/guides/vat-on-imports-philippines',
+    title: '12% VAT on Imports in the Philippines',
+    description:
+      'How the 12% import VAT is computed on CIF plus duty, when it applies, and how it differs from seller fees.',
+    tag: 'VAT',
+  },
+  {
     href: '/guides/package-held-by-customs-philippines',
     title: 'Why Is My Package Held by Customs in the Philippines?',
     description:
@@ -37,6 +58,41 @@ const guides = [
     description:
       "Your import is over ₱10,000 — now what? A plain guide to how you actually pay duty and 12% VAT, via courier or PHLPOST.",
     tag: 'Payment',
+  },
+  {
+    href: '/guides/import-tax-on-phones-philippines',
+    title: 'Import Tax on Phones in the Philippines',
+    description:
+      'Many smartphones are duty-free under the ITA — here is how duty and 12% VAT work for phones and gadgets.',
+    tag: 'Category',
+  },
+  {
+    href: '/guides/import-tax-on-shoes-philippines',
+    title: 'Import Tax on Shoes in the Philippines',
+    description:
+      'Footwear duty, the ₱10,000 de minimis, and 12% VAT explained — with a worked example for a sneaker order.',
+    tag: 'Category',
+  },
+  {
+    href: '/guides/import-tax-on-bags-philippines',
+    title: 'Import Tax on Bags in the Philippines',
+    description:
+      'How duty and 12% VAT apply to bags and accessories, and why high-value bags usually exceed the ₱10,000 threshold.',
+    tag: 'Category',
+  },
+  {
+    href: '/guides/import-tax-on-cosmetics-philippines',
+    title: 'Import Tax on Cosmetics & Skincare',
+    description:
+      'Duty and 12% VAT on beauty hauls, the ₱10,000 de minimis, and when the FDA may require clearance.',
+    tag: 'Category',
+  },
+  {
+    href: '/guides/import-tax-on-car-parts-philippines',
+    title: 'Import Tax on Car Parts in the Philippines',
+    description:
+      'How the de minimis, customs duty, and 12% VAT apply to automotive parts — and why you must verify your HS code.',
+    tag: 'Category',
   },
 ];
 

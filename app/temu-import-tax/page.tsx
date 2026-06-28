@@ -2,6 +2,7 @@
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
+import FaqSection from '@/components/FaqSection';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/temu-import-tax' },
@@ -86,6 +87,14 @@ export default function TemuPage() {
             on product type) plus 12% VAT on the combined CIF + duty amount.
           </p>
         </div>
+        <FaqSection
+          faqs={[
+            { q: 'Do I pay import tax on Temu orders to the Philippines?', a: 'Temu ships from China, so orders are imports. If the goods (FOB) value is ₱10,000 or below, there is no customs duty or VAT. Above ₱10,000, customs duty on the CIF value plus 12% VAT apply.' },
+            { q: 'Are most small Temu orders tax-free?', a: 'Many small Temu orders fall under the ₱10,000 FOB de minimis and are exempt from duty and VAT, though your courier may still add a small processing or handling fee.' },
+            { q: 'Can ordering several Temu items trigger import tax?', a: 'Yes. Under the same-day consolidation rule, parcels arriving the same day to the same address may be combined. If the total FOB value exceeds ₱10,000, the shipment becomes taxable.' },
+            { q: 'Does Temu shipping count toward the ₱10,000 limit?', a: 'No. The threshold is checked on the goods FOB value only, excluding shipping and insurance. Shipping is added to the CIF value used for duty and VAT once the order is taxable.' },
+          ]}
+        />
         <div className="mt-8">
           <ShareButtons title="Temu Import Tax Philippines – Customs Duty & VAT Calculator" />
         </div>

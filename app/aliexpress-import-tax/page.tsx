@@ -2,6 +2,7 @@
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
+import FaqSection from '@/components/FaqSection';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/aliexpress-import-tax' },
@@ -95,6 +96,14 @@ export default function AliExpressPage() {
             or the Tariff Commission tariff finder.
           </p>
         </div>
+        <FaqSection
+          faqs={[
+            { q: 'Do AliExpress orders get taxed in the Philippines?', a: 'If the FOB goods value is ₱10,000 or below, there is no duty or VAT. Above that, customs duty (the rate depends on the item) plus 12% VAT on CIF plus duty apply.' },
+            { q: 'What duty applies to AliExpress electronics?', a: 'Many electronics are 0% under the WTO Information Technology Agreement; others are around 10% as a representative estimate. The exact rate depends on the HS/AHTN code.' },
+            { q: 'Are small AliExpress orders tax-free?', a: 'Usually yes. Orders with a goods value at or below ₱10,000 are exempt from duty and VAT, though a courier handling fee may still apply.' },
+            { q: 'Does shipping count toward the ₱10,000 de minimis?', a: 'No. The threshold uses the FOB goods value only. Shipping and insurance form part of the CIF value used for duty and VAT when the order is taxable.' },
+          ]}
+        />
         <div className="mt-8">
           <ShareButtons title="AliExpress Import Tax Philippines – Customs Duty & VAT Calculator" />
         </div>

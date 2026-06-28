@@ -33,3 +33,16 @@ Loop Engineering Method — one row per attempt: `phase | hypothesis | change ma
 ### Notes
 - Structured-data coverage now: WebApplication on home + 6 marketplace; FAQPage on home + 2 guides (where visible FAQs exist); HowTo on how-it-works; BreadcrumbList on every route; ContactPage on contact; Article on the 2 guides.
 - FAQ sections (visible Q&A + FAQPage schema) for the 6 marketplace pages deferred to Phase 3 (content), to keep schema tied to visible content per Google policy.
+- Merged to `main` (commit 61901bb, fast-forward) per user authorization.
+
+## Phase 3 — P2: content foundation
+
+| # | phase | approach | result |
+|---|-------|----------|--------|
+| 1 | P3 | Built reusable `GuideArticle` + `FaqSection` components (data-driven, consistent markup + Article/FAQPage/BreadcrumbList schema). Ran a content workflow (parallel draft + adversarial fact-check) constrained to established facts only. | **PARTIAL via workflow** — org hit its MONTHLY SPEND LIMIT mid-run: 7/8 guide drafts completed; ALL fact-check agents + ALL 6 marketplace-FAQ drafts failed. |
+| 2 | P3 | Recovered in the main loop: hand-fact-checked all 7 completed drafts (verified every worked example's arithmetic + every figure against the allowed list), generated their pages deterministically, then wrote the 8th guide (car-parts) and all 6 marketplace FAQ sets myself. | **PASS** — build exit 0, 34 routes (8 new guides). Each new guide: one h1, Article+FAQPage+BreadcrumbList schema, apex canonical, internal links resolve. 6 marketplace pages now carry visible FAQ + FAQPage schema. Car-parts page asserts NO duty % (kept qualitative). |
+
+### Notes
+- New guides: how-to-compute-import-tax-philippines, de-minimis-philippines, vat-on-imports-philippines, import-tax-on-{phones,shoes,bags,cosmetics,car-parts}-philippines. All added to sitemap + guides index.
+- Accuracy: only established/published facts used (₱10,000 FOB de minimis; 12% VAT on CIF+duty; representative rates already in lib/rates.ts). All flagged figures + the car-parts and balikbayan caveats are in CONTENT-VERIFY.md.
+- Spend limit means no further subagent/workflow runs are possible this cycle; remaining work done solo in the main loop.

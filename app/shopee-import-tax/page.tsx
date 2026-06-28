@@ -2,6 +2,7 @@
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
+import FaqSection from '@/components/FaqSection';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/shopee-import-tax' },
@@ -100,6 +101,14 @@ export default function ShopeePage() {
             estimating before you buy.
           </p>
         </div>
+        <FaqSection
+          faqs={[
+            { q: 'Do Shopee orders have import tax?', a: 'Orders from local Filipino sellers are domestic with no customs duty. Only overseas or international listings shipped from abroad are imports assessed against the ₱10,000 de minimis.' },
+            { q: 'How do I tell if a Shopee item is an import?', a: 'International or Overseas labels and extended cross-border shipping times indicate the item ships from abroad and follows Bureau of Customs rules.' },
+            { q: 'How much is tax on an overseas Shopee order?', a: 'If the goods FOB value is ₱10,000 or below, it is exempt. Above that, customs duty on the CIF value plus 12% VAT apply.' },
+            { q: 'Does Shopee charge the import fee at checkout?', a: 'Shopee may collect an import-fee estimate at checkout for overseas items. Check your order summary to avoid double-counting the duty and VAT.' },
+          ]}
+        />
         <div className="mt-8">
           <ShareButtons title="Shopee Import Tax Philippines – International Seller Duty Calculator" />
         </div>

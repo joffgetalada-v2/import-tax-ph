@@ -2,6 +2,7 @@
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
+import FaqSection from '@/components/FaqSection';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/balikbayan-box' },
@@ -96,6 +97,14 @@ export default function BalikbayanPage() {
             directly.
           </p>
         </div>
+        <FaqSection
+          faqs={[
+            { q: 'Are balikbayan boxes taxed in the Philippines?', a: 'Qualified OFWs and returning residents have a duty- and VAT-free privilege under the CMTA for personal-use balikbayan boxes, subject to Bureau of Customs limits and eligibility. Boxes that do not qualify use the ₱10,000 de minimis rule.' },
+            { q: 'How much can I send duty-free in a balikbayan box?', a: 'Qualified senders may claim the CMTA balikbayan privilege up to a statutory value, a set number of times per calendar year. Confirm the current limit and your eligibility directly with the Bureau of Customs.' },
+            { q: 'What if my balikbayan box does not qualify for the exemption?', a: 'Then the general ₱10,000 de minimis applies: contents with a goods value above ₱10,000 face customs duty on the CIF value plus 12% VAT.' },
+            { q: 'Who can send a tax-free balikbayan box?', a: 'Qualified Filipinos abroad, including OFWs, non-resident Filipinos, and returning residents, sending personal-use goods to family, subject to Bureau of Customs documentation and eligibility rules.' },
+          ]}
+        />
         <div className="mt-8">
           <ShareButtons title="Balikbayan Box Tax Philippines – OFW Duty Exemption Guide & Calculator" />
         </div>

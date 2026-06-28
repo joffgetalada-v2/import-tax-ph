@@ -2,6 +2,7 @@
 import ImportTaxCalculator from '@/components/ImportTaxCalculator';
 import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
+import FaqSection from '@/components/FaqSection';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/shein-import-tax' },
@@ -80,6 +81,14 @@ export default function SheinPage() {
             buy multiple packages, be aware of the CAO 02-2025 same-day consolidation rule.
           </p>
         </div>
+        <FaqSection
+          faqs={[
+            { q: 'Is there import tax on Shein orders in the Philippines?', a: 'If the clothing FOB value is ₱10,000 or below, the order is exempt. Above ₱10,000, apparel carries a representative duty of about 15% on the CIF value, plus 12% VAT on CIF plus duty.' },
+            { q: 'Will my Shein haul be taxed?', a: 'A large haul can push the goods value above ₱10,000, which makes the whole order taxable. Single small orders usually stay under the threshold and remain exempt.' },
+            { q: 'What is the duty rate on Shein clothing?', a: 'Apparel is typically about 15%, a representative estimate; the exact rate depends on the item HS/AHTN code. On taxable orders, 12% VAT is added on CIF plus duty.' },
+            { q: 'Does Shein shipping count toward the ₱10,000 threshold?', a: 'No. Only the goods FOB value is compared to ₱10,000. Shipping and insurance are added afterward to form the CIF value that duty and VAT are computed on.' },
+          ]}
+        />
         <div className="mt-8">
           <ShareButtons title="Shein Import Tax Philippines – Clothing Duty & VAT Calculator" />
         </div>
