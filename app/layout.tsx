@@ -18,7 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.importtaxph.com'),
+  metadataBase: new URL('https://importtaxph.com'),
+  alternates: { canonical: '/' },
   title: {
     default: 'ImportTaxPH — Free Philippine Customs Duty & VAT Calculator',
     template: '%s | ImportTaxPH',
@@ -68,13 +69,13 @@ export default function RootLayout({
             '@context': 'https://schema.org',
             '@type': 'WebSite',
             name: 'ImportTaxPH',
-            url: 'https://www.importtaxph.com',
+            url: 'https://importtaxph.com',
           },
           {
             '@context': 'https://schema.org',
             '@type': 'Organization',
             name: 'ImportTaxPH',
-            url: 'https://www.importtaxph.com',
+            url: 'https://importtaxph.com',
             description: 'Free Philippine import tax and customs duty calculator.',
           },
         ]} />

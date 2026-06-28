@@ -4,6 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/temu-import-tax' },
   title: 'Temu Import Tax Philippines – Customs Duty & VAT Calculator',
   description:
     'Temu ships directly from China — most orders under ₱10,000 FOB are tax-free under CAO 02-2025. Larger or bundled orders face customs duty (10–15%) plus 12% VAT. Free calculator, instant results.',
@@ -19,7 +20,7 @@ export default function TemuPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Temu Philippines Import Tax Calculator',
-      url: 'https://www.importtaxph.com/temu-import-tax',
+      url: 'https://importtaxph.com/temu-import-tax',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +29,8 @@ export default function TemuPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-        { '@type': 'ListItem', position: 2, name: 'Temu Import Tax', item: 'https://www.importtaxph.com/temu-import-tax' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Temu Import Tax', item: 'https://importtaxph.com/temu-import-tax' },
       ],
     },
   ];

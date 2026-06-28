@@ -6,6 +6,7 @@ import ShareButtons from '@/components/ShareButtons';
 import { DE_MINIMIS_PHP } from '@/lib/rates';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/' },
   title: 'Philippine Import Tax Calculator – Free Customs Duty & VAT Estimator',
   description:
     'Free calculator for Philippine customs duty and 12% VAT on Temu, Shein, AliExpress, Lazada, Shopee, and international orders. Instant estimate — updated for the ₱10,000 de minimis rule (CAO 02-2025).',
@@ -69,7 +70,7 @@ const webAppSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
   name: 'Philippine Import Tax Calculator',
-  url: 'https://www.importtaxph.com',
+  url: 'https://importtaxph.com',
   applicationCategory: 'FinanceApplication',
   operatingSystem: 'Web',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -89,7 +90,7 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
   ],
 };
 

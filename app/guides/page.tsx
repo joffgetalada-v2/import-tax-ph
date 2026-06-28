@@ -3,6 +3,7 @@ import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides' },
   title: 'Philippine Customs & Import Tax Guides – Online Shoppers',
   description:
     'Plain-English guides for Philippine online shoppers — why packages are held at BOC, how to pay customs duty, the ₱10,000 de minimis threshold, and what Temu, Shein, AliExpress, Lazada shoppers need to know.',
@@ -17,8 +18,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://www.importtaxph.com/guides' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://importtaxph.com/guides' },
   ],
 };
 

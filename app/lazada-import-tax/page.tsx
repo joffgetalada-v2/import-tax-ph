@@ -4,6 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/lazada-import-tax' },
   title: 'Lazada Import Tax Philippines – LazGlobal & Cross-Border Duty Calculator',
   description:
     'Lazada PH orders from local sellers are duty-free. Cross-border LazGlobal listings shipped from abroad face Philippine customs duty + 12% VAT above ₱10,000 FOB. Free calculator — check before you buy.',
@@ -19,7 +20,7 @@ export default function LazadaPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Lazada Philippines Import Tax Calculator',
-      url: 'https://www.importtaxph.com/lazada-import-tax',
+      url: 'https://importtaxph.com/lazada-import-tax',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +29,8 @@ export default function LazadaPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-        { '@type': 'ListItem', position: 2, name: 'Lazada Import Tax', item: 'https://www.importtaxph.com/lazada-import-tax' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Lazada Import Tax', item: 'https://importtaxph.com/lazada-import-tax' },
       ],
     },
   ];

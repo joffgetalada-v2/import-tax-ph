@@ -4,6 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/aliexpress-import-tax' },
   title: 'AliExpress Import Tax Philippines – Customs Duty & VAT Calculator',
   description:
     'AliExpress duty rates vary by product — electronics can be 0%, clothing up to 15%. Estimate Philippine customs duty and 12% VAT on any AliExpress order before it arrives. Free, updated 2026.',
@@ -19,7 +20,7 @@ export default function AliExpressPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'AliExpress Philippines Import Tax Calculator',
-      url: 'https://www.importtaxph.com/aliexpress-import-tax',
+      url: 'https://importtaxph.com/aliexpress-import-tax',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +29,8 @@ export default function AliExpressPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-        { '@type': 'ListItem', position: 2, name: 'AliExpress Import Tax', item: 'https://www.importtaxph.com/aliexpress-import-tax' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'AliExpress Import Tax', item: 'https://importtaxph.com/aliexpress-import-tax' },
       ],
     },
   ];

@@ -4,6 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/how-to-pay-customs-duties-philippines' },
   title: 'How to Pay Customs Duties & VAT in the Philippines – Couriers vs PHLPOST',
   description:
     'Order exceeded ₱10,000? Here\'s exactly how Philippine customs duty and 12% VAT are paid — via courier (DHL, FedEx, LBC) or PHLPOST, what documents you need, and tips to avoid storage fees.',
@@ -20,11 +21,11 @@ const articleSchema = {
   headline: 'How to Pay Customs Duties and VAT in the Philippines',
   description:
     'A practical guide to paying import duty and 12% VAT via courier (DHL, FedEx, LBC) or PHLPOST.',
-  url: 'https://www.importtaxph.com/guides/how-to-pay-customs-duties-philippines',
+  url: 'https://importtaxph.com/guides/how-to-pay-customs-duties-philippines',
   publisher: {
     '@type': 'Organization',
     name: 'ImportTaxPH',
-    url: 'https://www.importtaxph.com',
+    url: 'https://importtaxph.com',
   },
 };
 
@@ -63,13 +64,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://www.importtaxph.com/guides' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://importtaxph.com/guides' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'How to Pay Customs Duties',
-      item: 'https://www.importtaxph.com/guides/how-to-pay-customs-duties-philippines',
+      item: 'https://importtaxph.com/guides/how-to-pay-customs-duties-philippines',
     },
   ],
 };

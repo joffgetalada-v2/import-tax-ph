@@ -3,6 +3,7 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/how-it-works' },
   title: 'How Philippine Customs Duty & VAT Are Computed',
   description:
     'Plain-English guide: how the Bureau of Customs computes duty and 12% VAT, the ₱10,000 FOB de minimis threshold, the same-day consolidation rule (CAO 02-2025), CIF value, and HS/AHTN tariff rates.',
@@ -29,8 +30,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-    { '@type': 'ListItem', position: 2, name: 'How It Works', item: 'https://www.importtaxph.com/how-it-works' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'How It Works', item: 'https://importtaxph.com/how-it-works' },
   ],
 };
 

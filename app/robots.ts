@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://www.importtaxph.com/sitemap.xml',
+    sitemap: 'https://importtaxph.com/sitemap.xml',
   };
 }

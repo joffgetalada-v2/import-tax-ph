@@ -4,6 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/shopee-import-tax' },
   title: 'Shopee Import Tax Philippines – International Seller Duty Calculator',
   description:
     'Shopee PH local seller orders are duty-free. Shopee International or overseas seller listings above ₱10,000 FOB face Philippine customs duty + 12% VAT. Free calculator — updated for CAO 02-2025.',
@@ -19,7 +20,7 @@ export default function ShopeePage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Shopee Philippines Import Tax Calculator',
-      url: 'https://www.importtaxph.com/shopee-import-tax',
+      url: 'https://importtaxph.com/shopee-import-tax',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +29,8 @@ export default function ShopeePage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-        { '@type': 'ListItem', position: 2, name: 'Shopee Import Tax', item: 'https://www.importtaxph.com/shopee-import-tax' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Shopee Import Tax', item: 'https://importtaxph.com/shopee-import-tax' },
       ],
     },
   ];

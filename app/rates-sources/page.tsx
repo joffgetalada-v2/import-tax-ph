@@ -11,6 +11,7 @@ import {
 } from '@/lib/rates';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/rates-sources' },
   title: 'Philippine Import Duty Rates & Sources – CAO 02-2025',
   description:
     'Every duty rate, de minimis threshold, 12% VAT base, and exchange rate used by ImportTaxPH — with official Bureau of Customs and Tariff Commission sources. Verified 2026, per CAO No. 02-2025.',
@@ -72,8 +73,8 @@ export default function RatesSourcesPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-      { '@type': 'ListItem', position: 2, name: 'Rates & Sources', item: 'https://www.importtaxph.com/rates-sources' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+      { '@type': 'ListItem', position: 2, name: 'Rates & Sources', item: 'https://importtaxph.com/rates-sources' },
     ],
   };
 

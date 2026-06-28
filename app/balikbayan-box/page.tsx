@@ -4,6 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/balikbayan-box' },
   title: 'Balikbayan Box Tax Philippines – OFW Duty Exemption Guide & Calculator',
   description:
     'Qualified OFWs may send balikbayan boxes duty and VAT-free up to ₱150,000, up to 3 times per year. Boxes that don\'t qualify use the ₱10,000 de minimis rule. Estimate potential customs charges.',
@@ -19,7 +20,7 @@ export default function BalikbayanPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Balikbayan Box Import Tax Calculator',
-      url: 'https://www.importtaxph.com/balikbayan-box',
+      url: 'https://importtaxph.com/balikbayan-box',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +29,8 @@ export default function BalikbayanPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-        { '@type': 'ListItem', position: 2, name: 'Balikbayan Box', item: 'https://www.importtaxph.com/balikbayan-box' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Balikbayan Box', item: 'https://importtaxph.com/balikbayan-box' },
       ],
     },
   ];

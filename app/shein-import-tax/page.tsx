@@ -4,6 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/shein-import-tax' },
   title: 'Shein Import Tax Philippines – Clothing Duty & VAT Calculator',
   description:
     'Shein clothing and accessories from China and Singapore face ~15% customs duty plus 12% VAT on orders over ₱10,000 FOB. Free estimator — instant results, no sign-up, updated for CAO 02-2025.',
@@ -19,7 +20,7 @@ export default function SheinPage() {
       '@context': 'https://schema.org',
       '@type': 'WebApplication',
       name: 'Shein Philippines Import Tax Calculator',
-      url: 'https://www.importtaxph.com/shein-import-tax',
+      url: 'https://importtaxph.com/shein-import-tax',
       applicationCategory: 'FinanceApplication',
       operatingSystem: 'Web',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'PHP' },
@@ -28,8 +29,8 @@ export default function SheinPage() {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-        { '@type': 'ListItem', position: 2, name: 'Shein Import Tax', item: 'https://www.importtaxph.com/shein-import-tax' },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+        { '@type': 'ListItem', position: 2, name: 'Shein Import Tax', item: 'https://importtaxph.com/shein-import-tax' },
       ],
     },
   ];

@@ -4,6 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import CopyAddress from '@/components/CopyAddress';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/support' },
   title: 'Support ImportTaxPH – Help Keep It Free',
   description:
     'ImportTaxPH is free with no paywall. If it helped you, chip in via Ko-fi, GCash, Maya, or crypto to cover hosting and fund new guides.',
@@ -15,8 +16,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-    { '@type': 'ListItem', position: 2, name: 'Support', item: 'https://www.importtaxph.com/support' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'Support', item: 'https://importtaxph.com/support' },
   ],
 };
 

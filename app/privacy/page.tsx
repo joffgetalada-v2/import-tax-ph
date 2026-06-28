@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/privacy' },
   title: 'Privacy Policy | ImportTaxPH',
   description:
     'How ImportTaxPH handles data: the calculator runs entirely in your browser and collects no personal information.',

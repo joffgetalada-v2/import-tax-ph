@@ -4,6 +4,7 @@ import JsonLd from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/guides/package-held-by-customs-philippines' },
   title: 'Why Is My Package Held by Customs Philippines? 6 Reasons Explained',
   description:
     '6 reasons your Temu, Shein, AliExpress, Lazada or Shopee order is stuck at Philippine customs — value over ₱10,000, consolidation rule, inspection, restricted items, or pending duties. What to do next.',
@@ -20,11 +21,11 @@ const articleSchema = {
   headline: 'Why Is My Package Held by Customs in the Philippines?',
   description:
     "Why parcels from Temu, Shein, and AliExpress get held, how long it takes, and what you can do.",
-  url: 'https://www.importtaxph.com/guides/package-held-by-customs-philippines',
+  url: 'https://importtaxph.com/guides/package-held-by-customs-philippines',
   publisher: {
     '@type': 'Organization',
     name: 'ImportTaxPH',
-    url: 'https://www.importtaxph.com',
+    url: 'https://importtaxph.com',
   },
 };
 
@@ -63,13 +64,13 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://www.importtaxph.com/guides' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://importtaxph.com/guides' },
     {
       '@type': 'ListItem',
       position: 3,
       name: 'Why Is My Package Held?',
-      item: 'https://www.importtaxph.com/guides/package-held-by-customs-philippines',
+      item: 'https://importtaxph.com/guides/package-held-by-customs-philippines',
     },
   ],
 };

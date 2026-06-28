@@ -2,6 +2,7 @@
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/terms' },
   title: 'Terms of Use | ImportTaxPH',
   description:
     'The terms governing your use of ImportTaxPH, including limitation of liability for estimate-based results.',
@@ -12,8 +13,8 @@ export default function TermsPage() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-      { '@type': 'ListItem', position: 2, name: 'Terms of Use', item: 'https://www.importtaxph.com/terms' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+      { '@type': 'ListItem', position: 2, name: 'Terms of Use', item: 'https://importtaxph.com/terms' },
     ],
   };
 

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
   title: 'Contact ImportTaxPH – Rate Corrections & Questions',
   description:
     'Report an outdated Philippine customs duty rate, flag a calculator bug, or ask a question. Email hello@importtaxph.com — we typically reply within 1–3 business days.',
@@ -12,8 +13,8 @@ const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.importtaxph.com' },
-    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://www.importtaxph.com/contact' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://importtaxph.com' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://importtaxph.com/contact' },
   ],
 };
 
@@ -21,7 +22,7 @@ const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
   name: 'Contact ImportTaxPH',
-  url: 'https://www.importtaxph.com/contact',
+  url: 'https://importtaxph.com/contact',
 };
 
 const reasons = [
